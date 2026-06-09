@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Panel · PocketCorp</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="landing.css" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-sans); background: var(--cream); color: var(--ink); }
+  .adm-shell { max-width: 920px; margin: 0 auto; padding: 0 18px 120px; }
+
+  /* Header */
+  .adm-head {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(250,249,245,.9); backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--ink); margin: 0 -18px 0;
+    padding: 12px 18px; display: flex; align-items: center; gap: 14px;
+  }
+  .adm-head img { height: 26px; }
+  .adm-head .tag {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-mute); border: 2px solid var(--ink); border-radius: 999px; padding: 3px 10px; background: var(--white);
+  }
+  .adm-head .sp { margin-left: auto; }
+
+  /* Toolbar */
+  .adm-toolbar {
+    position: sticky; top: 51px; z-index: 25; background: var(--cream);
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 14px 0; margin: 0 0 8px; border-bottom: 1px dashed var(--ink-ghost);
+  }
+  .adm-toolbar .grow { flex: 1; }
+
+  .adm-intro { padding: 22px 0 6px; }
+  .adm-intro h1 { font-family: var(--font-heading); font-weight: 900; font-size: 30px; letter-spacing: -0.02em; margin: 0; }
+  .adm-intro p { color: var(--ink-mute); font-size: 14.5px; margin: 8px 0 0; }
+
+  /* Sections */
+  .adm-sec {
+    background: var(--white); border: 2px solid var(--ink); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2); margin-top: 18px; overflow: hidden;
+  }
+  .adm-sec__head {
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    padding: 15px 18px; background: var(--white); user-select: none;
+  }
+  .adm-sec__dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--ink); flex: none; }
+  .adm-sec__title { font-family: var(--font-heading); font-weight: 800; font-size: 17px; }
+  .adm-sec__count { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-mute); margin-left: auto; }
+  .adm-sec__chev { transition: transform .2s ease; }
+  .adm-sec.collapsed .adm-sec__chev { transform: rotate(-90deg); }
+  .adm-sec__body { padding: 4px 18px 18px; border-top: 1px solid var(--grey-200); }
+  .adm-sec.collapsed .adm-sec__body { display: none; }
+
+  .fld { margin-top: 16px; }
+  .fld label { display: block; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; }
+  .fld input, .fld textarea {
+    width: 100%; border: 2px solid var(--ink); border-radius: 11px; padding: 10px 13px;
+    font-family: var(--font-sans); font-size: 14.5px; color: var(--ink); background: var(--white); outline: none; resize: vertical;
+  }
+  .fld input:focus, .fld textarea:focus { box-shadow: 3px 3px 0 0 var(--ink); }
+  .fld textarea { min-height: 70px; line-height: 1.5; }
+  .fld .hint { font-size: 12px; color: var(--ink-faint); margin-top: 5px; }
+  .fld.changed input, .fld.changed textarea { border-color: var(--pop-orange); }
+  .fld.changed label::after { content: " · sin guardar"; color: var(--pop-orange); }
+
+  /* GitHub settings */
+  .gh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .gh-grid { grid-template-columns: 1fr; } }
+
+  /* Toast */
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--cream); font-weight: 600; font-size: 14px;
+    padding: 12px 20px; border-radius: 999px; box-shadow: var(--shadow-3); opacity: 0; pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease; z-index: 100; max-width: 90vw; text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast.err { background: var(--pop-crimson); }
+  .toast.ok { background: #1F8A4C; }
+
+  /* Login overlay */
+  .adm-login { position: fixed; inset: 0; background: var(--cream); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 22px; }
+  .adm-login[hidden] { display: none !important; }   /* gana sobre display:flex */
+  .adm-login__box { width: 360px; max-width: 100%; background: var(--white); border: 3px solid var(--ink); border-radius: 20px; box-shadow: 8px 8px 0 0 var(--ink); padding: 28px 24px; }
+  .adm-login__box h2 { font-family: var(--font-heading); font-weight: 900; font-size: 22px; margin: 0 0 4px; }
+  .adm-login__box p { font-size: 13.5px; color: var(--ink-mute); margin: 0 0 16px; }
+
+  .pill-note { background: var(--tint-yellow); border: 2px solid var(--ink); border-radius: 12px; padding: 12px 14px; font-size: 13px; line-height: 1.5; }
+  code { font-family: var(--font-mono); background: var(--grey-200); padding: 1px 5px; border-radius: 5px; font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<!-- Login (por si entran directo a admin.html) -->
+<div class="adm-login" id="login" hidden>
+  <div class="adm-login__box">
+    <h2>Panel de administración</h2>
+    <p>Ingresá la contraseña para continuar.</p>
+    <form id="login-form" onsubmit="return PCLOGIN()" autocomplete="off">
+    <input id="login-pass" type="password" class="fld" style="width:100%;border:2px solid var(--ink);border-radius:11px;padding:11px 13px;font-size:15px;outline:none" placeholder="Contraseña" autocomplete="current-password" onkeydown="if(event.key==='Enter'){event.preventDefault();PCLOGIN();return false;}" />
+    <div id="login-err" style="color:var(--pop-crimson);font-weight:700;font-size:12.5px;margin-top:8px" hidden>Contraseña incorrecta.</div>
+    <button id="login-go" class="btn" style="width:100%;margin-top:16px" type="submit" onclick="PCLOGIN();return false;">Entrar</button>
+    </form>
+    <a href="index.html" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:var(--ink-mute)">← Volver al sitio</a>
+    <div style="text-align:center;margin-top:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-ghost)">PANEL v4 · FORM + DISPLAY FIX</div>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <div class="adm-shell">
+    <div class="adm-head">
+      <img src="../assets/brand/logo-wordmark.png" alt="PocketCorp" />
+      <span class="tag">Panel</span>
+      <span class="sp"></span>
+      <a class="btn btn--white btn--sm" href="index.html" target="_blank" rel="noopener">Ver sitio ↗</a>
+      <button class="btn btn--white btn--sm" id="logout" type="button">Salir</button>
+    </div>
+
+    <div class="adm-intro">
+      <h1>Editar textos del sitio</h1>
+      <p>Cambiá los textos, guardá un borrador para probar, y cuando estés conforme, publicá para que todos lo vean.</p>
+    </div>
+
+    <div class="adm-toolbar">
+      <button class="btn btn--sm" id="save-draft" type="button">💾 Guardar borrador</button>
+      <button class="btn btn--white btn--sm" id="preview" type="button">👁 Vista previa</button>
+      <button class="btn btn--white btn--sm" id="discard" type="button">↺ Descartar cambios</button>
+      <span class="grow"></span>
+      <button class="btn btn--green btn--sm" id="publish" type="button">🚀 Publicar</button>
+    </div>
+
+    <div id="sections"></div>
+
+    <!-- GitHub settings -->
+    <div class="adm-sec collapsed" data-gh>
+      <div class="adm-sec__head">
+        <span class="adm-sec__dot" style="background:var(--ink)"></span>
+        <span class="adm-sec__title">Conexión con GitHub (para publicar)</span>
+        <span class="adm-sec__count">avanzado</span>
+        <span class="adm-sec__chev">▾</span>
+      </div>
+      <div class="adm-sec__body">
+        <div class="pill-note" style="margin-top:14px">
+          Estos datos se guardan <b>solo en este navegador</b>. Tu llave (token) nunca se sube al sitio.
+          ¿No sabés qué poner? Pedile a tu asistente la guía paso a paso.
+        </div>
+        <div class="gh-grid" style="margin-top:14px">
+          <div class="fld"><label>Usuario u organización de GitHub</label><input id="gh-owner" placeholder="ej. dario-aoiz" /></div>
+          <div class="fld"><label>Nombre del repositorio</label><input id="gh-repo" placeholder="ej. pocketcorp-web" /></div>
+          <div class="fld"><label>Rama</label><input id="gh-branch" placeholder="main" /></div>
+          <div class="fld"><label>Ruta del archivo de contenido</label><input id="gh-path" placeholder="landing/content.json" /></div>
+        </div>
+        <div class="fld"><label>Token de acceso (PAT)</label><input id="gh-token" type="password" placeholder="ghp_…" autocomplete="off" /><div class="hint">Se guarda solo en este navegador. Para borrarlo, dejá el campo vacío y guardá.</div></div>
+        <button class="btn btn--white btn--sm" id="gh-save" type="button" style="margin-top:6px">Guardar conexión</button>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:var(--ink-faint);font-size:12px;margin-top:26px">PocketCorp · Panel de contenido · Los cambios públicos requieren "Publicar"</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   Panel de administración — PocketCorp
+   ============================================================ */
+var ADMIN_PASS = "pocket2026";       // ⚠ protección suave (cambiable)
+var DRAFT_KEY  = "pocketcorp_content_draft";
+var GH_KEY     = "pocketcorp_gh";
+var CONTENT_URL = "content.json";
+
+/* ---- LOGIN GLOBAL (inline, a prueba de balas) ----
+   Definido lo PRIMERO para que el botón y el form funcionen siempre,
+   sin depender de DOMContentLoaded ni de código posterior. */
+function PCLOGIN(){
+  try {
+    var p = document.getElementById("login-pass");
+    var err = document.getElementById("login-err");
+    var entered = (p && p.value) ? p.value.trim() : "";
+    console.log("[PCLOGIN] intento, longitud:", entered.length);
+    if (entered === ADMIN_PASS) {
+      if (err) err.hidden = true;
+      var login = document.getElementById("login");
+      var app = document.getElementById("app");
+      // Triple seguro: hidden + style.display + remove
+      if (login) { login.hidden = true; login.style.display = "none"; }
+      if (app) { app.hidden = false; app.style.display = ""; }
+      console.log("[PCLOGIN] OK, mostrando panel");
+      if (!window.__PC_APP_READY) {
+        window.__PC_APP_READY = true;
+        try { showApp(); } catch(e) { console.error("[PCLOGIN] showApp error:", e); }
+      }
+    } else {
+      console.log("[PCLOGIN] contraseña incorrecta");
+      if (err) err.hidden = false;
+      if (p) { p.value = ""; p.focus(); }
+    }
+  } catch(e) {
+    alert("Error en login: " + e.message);
+    console.error("[PCLOGIN] excepción:", e);
+  }
+  return false;  // evita el reload del form
+}
+
+/* ---- Esquema de campos editables ---- */
+const SCHEMA = [
+  { id: "global", title: "WhatsApp", color: "#25D366", fields: [
+    { key: "global.waNumber", label: "Número de WhatsApp (sin + ni espacios)", type: "text", hint: "Ej: 59169542275" },
+    { key: "global.waMsg", label: "Mensaje precargado por defecto", type: "area" },
+  ]},
+  { id: "social", title: "Redes sociales", color: "#FF3D8B", fields: [
+    { key: "social.instagram", label: "Instagram (URL completa)", type: "text", hint: "https://instagram.com/tucuenta · si lo dejás vacío, el icono queda visible pero sin enlace" },
+    { key: "social.facebook", label: "Facebook (URL completa)", type: "text", hint: "https://facebook.com/tupagina" },
+    { key: "social.tiktok", label: "TikTok (URL completa)", type: "text", hint: "https://tiktok.com/@tucuenta" },
+  ]},
+  { id: "hero", title: "Encabezado (Hero)", color: "#FF5C00", fields: [
+    { key: "hero.title", label: "Titular grande", type: "area", hint: "Encerrá una palabra entre *asteriscos* para resaltarla con el recuadro naranja." },
+    { key: "hero.sub", label: "Subtítulo", type: "area" },
+    { key: "hero.trust", label: "Texto de confianza (junto a las estrellas)", type: "text" },
+  ]},
+  { id: "marquee", title: "Cinta deslizante", color: "#FBCC00", fields: [
+    { key: "marquee.stat", label: "Frase con la cifra destacada", type: "text" },
+  ]},
+  { id: "dir", title: "Directores (frases del carrusel)", color: "#00FF66", fields: [
+    { key: "dir.max", label: "Max · CEO", type: "area" },
+    { key: "dir.linda", label: "Linda · Marketing", type: "area" },
+    { key: "dir.armando", label: "Armando · Finanzas", type: "area" },
+    { key: "dir.vladimir", label: "Vladimir · Ventas", type: "area" },
+    { key: "dir.eva", label: "Eva · Asistente", type: "area" },
+    { key: "dir.sofia", label: "Sofia · RRHH", type: "area" },
+    { key: "dir.paola", label: "Paola · Operaciones", type: "area" },
+    { key: "dir.luis", label: "Luis · Legal", type: "area" },
+    { key: "dir.hugo", label: "Hugo · Riesgo", type: "area" },
+  ]},
+  { id: "pricing", title: "Planes y precios", color: "#00F0FF", fields: [
+    { key: "pricing.sub", label: "Subtítulo de la sección", type: "text" },
+    { key: "pricing.soloName", label: "Plan 1 · Nombre", type: "text" },
+    { key: "pricing.soloBlurb", label: "Plan 1 · Descripción", type: "text" },
+    { key: "pricing.soloPrice", label: "Plan 1 · Precio", type: "text" },
+    { key: "pricing.equipoName", label: "Plan 2 · Nombre", type: "text" },
+    { key: "pricing.equipoBlurb", label: "Plan 2 · Descripción", type: "text" },
+    { key: "pricing.equipoPrice", label: "Plan 2 · Precio", type: "text" },
+    { key: "pricing.consejoName", label: "Plan 3 · Nombre", type: "text" },
+    { key: "pricing.consejoBlurb", label: "Plan 3 · Descripción", type: "text" },
+    { key: "pricing.consejoPrice", label: "Plan 3 · Precio", type: "text" },
+  ]},
+  { id: "faq", title: "Preguntas frecuentes", color: "#9B5DE5", fields: [
+    { key: "faq.q1", label: "Pregunta 1", type: "text" }, { key: "faq.a1", label: "Respuesta 1", type: "area" },
+    { key: "faq.q2", label: "Pregunta 2", type: "text" }, { key: "faq.a2", label: "Respuesta 2", type: "area" },
+    { key: "faq.q3", label: "Pregunta 3", type: "text" }, { key: "faq.a3", label: "Respuesta 3", type: "area" },
+    { key: "faq.q4", label: "Pregunta 4", type: "text" }, { key: "faq.a4", label: "Respuesta 4", type: "area" },
+    { key: "faq.q5", label: "Pregunta 5", type: "text" }, { key: "faq.a5", label: "Respuesta 5", type: "area" },
+  ]},
+  { id: "closer", title: "Cierre / escasez", color: "#FF0033", fields: [
+    { key: "closer.cupos", label: "Cifra de cupos (ej. 11 negocios)", type: "text" },
+    { key: "closer.sub", label: "Texto de cierre", type: "area" },
+  ]},
+  { id: "sat-max", title: "📄 Max · CEO (página satélite)", color: "#00FF66", fields: [
+    { key: "directores.max.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.max.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.max.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.max.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.max.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.max.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.max.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.max.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.max.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.max.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.max.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.max.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.max.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.max.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.max.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.max.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-linda", title: "📄 Linda · Marketing (página satélite)", color: "#00F0FF", fields: [
+    { key: "directores.linda.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.linda.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.linda.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.linda.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.linda.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.linda.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.linda.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.linda.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.linda.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.linda.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.linda.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.linda.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.linda.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.linda.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.linda.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.linda.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-armando", title: "📄 Armando · Finanzas (página satélite)", color: "#FBCC00", fields: [
+    { key: "directores.armando.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.armando.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.armando.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.armando.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.armando.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.armando.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.armando.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.armando.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.armando.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.armando.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.armando.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.armando.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.armando.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.armando.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.armando.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.armando.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-vladimir", title: "📄 Vladimir · Ventas (página satélite)", color: "#FBCC00", fields: [
+    { key: "directores.vladimir.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.vladimir.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.vladimir.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.vladimir.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.vladimir.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.vladimir.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.vladimir.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.vladimir.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.vladimir.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.vladimir.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.vladimir.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.vladimir.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.vladimir.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.vladimir.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.vladimir.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.vladimir.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-eva", title: "📄 Eva · Asistente (página satélite)", color: "#FF3D8B", fields: [
+    { key: "directores.eva.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.eva.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.eva.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.eva.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.eva.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.eva.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.eva.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.eva.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.eva.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.eva.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.eva.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.eva.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.eva.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.eva.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.eva.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.eva.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-sofia", title: "📄 Sofia · RRHH (página satélite)", color: "#9B5DE5", fields: [
+    { key: "directores.sofia.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.sofia.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.sofia.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.sofia.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.sofia.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.sofia.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.sofia.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.sofia.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.sofia.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.sofia.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.sofia.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.sofia.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.sofia.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.sofia.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.sofia.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.sofia.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-paola", title: "📄 Paola · Operaciones (página satélite)", color: "#A8E10C", fields: [
+    { key: "directores.paola.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.paola.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.paola.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.paola.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.paola.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.paola.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.paola.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.paola.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.paola.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.paola.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.paola.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.paola.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.paola.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.paola.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.paola.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.paola.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-luis", title: "📄 Luis · Legal (página satélite)", color: "#FF0033", fields: [
+    { key: "directores.luis.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.luis.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.luis.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.luis.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.luis.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.luis.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.luis.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.luis.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.luis.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.luis.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.luis.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.luis.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.luis.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.luis.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.luis.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.luis.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "sat-hugo", title: "📄 Hugo · Riesgo (página satélite)", color: "#FBCC00", fields: [
+    { key: "directores.hugo.eyebrow", label: "Eyebrow (encima del nombre)", type: "text" },
+    { key: "directores.hugo.role", label: "Rol (debajo del nombre)", type: "text" },
+    { key: "directores.hugo.tagline", label: "Tagline (texto de presentación)", type: "area" },
+    { key: "directores.hugo.pillTitle", label: "Sección \"Prompts\" · título", type: "text" },
+    { key: "directores.hugo.pillSub", label: "Sección \"Prompts\" · subtítulo", type: "area" },
+    { key: "directores.hugo.deliv1Title", label: "Entregable 1 · título", type: "text" },
+    { key: "directores.hugo.deliv1Desc", label: "Entregable 1 · descripción", type: "area" },
+    { key: "directores.hugo.deliv2Title", label: "Entregable 2 · título", type: "text" },
+    { key: "directores.hugo.deliv2Desc", label: "Entregable 2 · descripción", type: "area" },
+    { key: "directores.hugo.deliv3Title", label: "Entregable 3 · título", type: "text" },
+    { key: "directores.hugo.deliv3Desc", label: "Entregable 3 · descripción", type: "area" },
+    { key: "directores.hugo.deliv4Title", label: "Entregable 4 · título", type: "text" },
+    { key: "directores.hugo.deliv4Desc", label: "Entregable 4 · descripción", type: "area" },
+    { key: "directores.hugo.chatTitle", label: "Sección \"Así trabaja\" · título", type: "text" },
+    { key: "directores.hugo.chatSub", label: "Sección \"Así trabaja\" · texto", type: "area" },
+    { key: "directores.hugo.closerSub", label: "Cierre · texto", type: "area" },
+  ]},
+  { id: "footer", title: "Pie de página", color: "#A8E10C", fields: [
+    { key: "footer.tagline", label: "Texto del logo", type: "area" },
+    { key: "footer.atiende", label: "Línea \"Atiende\"", type: "text" },
+  ]},
+];
+
+/* ---- Subsecciones: una por director ---- */
+const DIR_NAMES = {
+  max:      ["Max · CEO", "#00FF66"],
+  linda:    ["Linda · Marketing", "#00F0FF"],
+  armando:  ["Armando · Finanzas", "#FBCC00"],
+  vladimir: ["Vladimir · Ventas", "#FF5C00"],
+  eva:      ["Eva · Asistente", "#FF3D8B"],
+  sofia:    ["Sofia · RRHH", "#9B5DE5"],
+  paola:    ["Paola · Operaciones", "#A8E10C"],
+  luis:     ["Luis · Legal", "#FF0033"],
+  hugo:     ["Hugo · Riesgo", "#FBCC00"],
+};
+Object.keys(DIR_NAMES).forEach(function (id) {
+  const [title, color] = DIR_NAMES[id];
+  SCHEMA.push({
+    id: "directores." + id,
+    title: "Página de " + title,
+    color: color,
+    fields: [
+      { key: "directores."+id+".eyebrow",     label: "Eyebrow (#0X · cargo)", type: "text" },
+      { key: "directores."+id+".role",        label: "Rol (badge bajo el nombre)", type: "text" },
+      { key: "directores."+id+".tagline",     label: "Tagline del hero", type: "area" },
+      { key: "directores."+id+".pillTitle",   label: "Título · Cómo hablarle", type: "text" },
+      { key: "directores."+id+".pillSub",     label: "Subtítulo · Cómo hablarle", type: "area" },
+      { key: "directores."+id+".deliv1Title", label: "Entregable 1 · Título", type: "text" },
+      { key: "directores."+id+".deliv1Desc",  label: "Entregable 1 · Descripción", type: "area" },
+      { key: "directores."+id+".deliv2Title", label: "Entregable 2 · Título", type: "text" },
+      { key: "directores."+id+".deliv2Desc",  label: "Entregable 2 · Descripción", type: "area" },
+      { key: "directores."+id+".deliv3Title", label: "Entregable 3 · Título", type: "text" },
+      { key: "directores."+id+".deliv3Desc",  label: "Entregable 3 · Descripción", type: "area" },
+      { key: "directores."+id+".deliv4Title", label: "Entregable 4 · Título", type: "text" },
+      { key: "directores."+id+".deliv4Desc",  label: "Entregable 4 · Descripción", type: "area" },
+      { key: "directores."+id+".chatTitle",   label: "Mini-chat · Título", type: "text" },
+      { key: "directores."+id+".chatSub",     label: "Mini-chat · Subtítulo", type: "area" },
+      { key: "directores."+id+".closerSub",   label: "Cierre · Subtítulo", type: "area" },
+    ]
+  });
+});
+
+/* ---- Utilidades ---- */
+const $ = (s, r=document) => r.querySelector(s);
+const toast = (msg, kind="") => {
+  const t = $("#toast"); t.textContent = msg; t.className = "toast show " + kind;
+  clearTimeout(t._t); t._t = setTimeout(() => t.className = "toast", 2600);
+};
+function getPath(o, p){ return p.split(".").reduce((a,k)=> (a&&a[k]!=null)?a[k]:undefined, o); }
+function setPath(o, p, v){ const ks=p.split("."); let c=o; for(let i=0;i<ks.length-1;i++){ c[ks[i]]=c[ks[i]]||{}; c=c[ks[i]]; } c[ks[ks.length-1]]=v; }
+
+let PUBLISHED = {};   // content.json en el servidor
+let BASE = {};        // published + draft (lo que se muestra al abrir)
+
+/* ---- Auth: manejada en DOMContentLoaded ---- */
+
+/* ---- Construir formulario ---- */
+function buildForm(){
+  const root = $("#sections"); root.innerHTML = "";
+  SCHEMA.forEach(sec => {
+    const wrap = document.createElement("div");
+    wrap.className = "adm-sec" + (sec.id==="global" ? "" : " collapsed");
+    wrap.innerHTML =
+      '<div class="adm-sec__head"><span class="adm-sec__dot" style="background:'+sec.color+'"></span>'+
+      '<span class="adm-sec__title">'+sec.title+'</span>'+
+      '<span class="adm-sec__count">'+sec.fields.length+' campos</span>'+
+      '<span class="adm-sec__chev">▾</span></div>'+
+      '<div class="adm-sec__body"></div>';
+    const body = wrap.querySelector(".adm-sec__body");
+    wrap.querySelector(".adm-sec__head").onclick = () => wrap.classList.toggle("collapsed");
+    sec.fields.forEach(f => {
+      const val = getPath(BASE, f.key) || "";
+      const fld = document.createElement("div");
+      fld.className = "fld";
+      const ctrl = f.type==="area"
+        ? '<textarea data-key="'+f.key+'"></textarea>'
+        : '<input type="text" data-key="'+f.key+'" />';
+      fld.innerHTML = '<label>'+f.label+'</label>'+ctrl + (f.hint?'<div class="hint">'+f.hint+'</div>':'');
+      body.appendChild(fld);
+      const el = fld.querySelector("[data-key]");
+      el.value = val;
+      el.addEventListener("input", () => {
+        const orig = getPath(BASE, f.key) || "";
+        fld.classList.toggle("changed", el.value !== orig);
+      });
+    });
+    root.appendChild(wrap);
+  });
+}
+
+/* ---- Recolectar valores del formulario -> objeto content ---- */
+function collect(){
+  const out = JSON.parse(JSON.stringify(BASE));
+  document.querySelectorAll("#sections [data-key]").forEach(el => {
+    setPath(out, el.getAttribute("data-key"), el.value);
+  });
+  return out;
+}
+function clearChanged(){ document.querySelectorAll(".fld.changed").forEach(f=>f.classList.remove("changed")); }
+
+/* ---- Guardar borrador local ---- */
+function saveDraft(){
+  const content = collect();
+  try { localStorage.setItem(DRAFT_KEY, JSON.stringify(content)); } catch(e){ toast("No se pudo guardar el borrador", "err"); return; }
+  BASE = content; clearChanged();
+  toast("Borrador guardado. Mirá la vista previa 👁", "ok");
+}
+function discard(){
+  if(!confirm("¿Descartar los cambios no publicados y volver a lo último publicado?")) return;
+  try { localStorage.removeItem(DRAFT_KEY); } catch(e){}
+  BASE = JSON.parse(JSON.stringify(PUBLISHED));
+  buildForm(); toast("Cambios descartados");
+}
+
+/* ---- GitHub ---- */
+function ghLoad(){ try { return JSON.parse(localStorage.getItem(GH_KEY)||"{}"); } catch(e){ return {}; } }
+function ghFill(){ const g=ghLoad(); $("#gh-owner").value=g.owner||""; $("#gh-repo").value=g.repo||""; $("#gh-branch").value=g.branch||"main"; $("#gh-path").value=g.path||"landing/content.json"; $("#gh-token").value=g.token||""; }
+function ghSave(){
+  const g = { owner:$("#gh-owner").value.trim(), repo:$("#gh-repo").value.trim(), branch:($("#gh-branch").value.trim()||"main"), path:($("#gh-path").value.trim()||"landing/content.json"), token:$("#gh-token").value.trim() };
+  try { localStorage.setItem(GH_KEY, JSON.stringify(g)); } catch(e){}
+  toast("Conexión guardada", "ok");
+}
+function b64(str){ return btoa(unescape(encodeURIComponent(str))); }
+
+async function publish(){
+  const g = ghLoad();
+  if(!g.owner || !g.repo || !g.token){
+    toast("Configurá la conexión con GitHub primero (sección de abajo)", "err");
+    $('[data-gh]').classList.remove("collapsed");
+    $('[data-gh]').scrollIntoView({behavior:"smooth"});
+    return;
+  }
+  const content = collect();
+  const json = JSON.stringify(content, null, 2);
+  const url = "https://api.github.com/repos/"+g.owner+"/"+g.repo+"/contents/"+g.path;
+  const headers = { "Authorization":"token "+g.token, "Accept":"application/vnd.github+json" };
+  $("#publish").disabled = true; toast("Publicando…");
+  try {
+    // 1) obtener sha actual (si existe)
+    let sha = undefined;
+    const getr = await fetch(url+"?ref="+encodeURIComponent(g.branch), { headers });
+    if(getr.ok){ const d = await getr.json(); sha = d.sha; }
+    else if(getr.status !== 404){ throw new Error("No se pudo leer el archivo ("+getr.status+")"); }
+    // 2) subir
+    const putr = await fetch(url, {
+      method:"PUT", headers,
+      body: JSON.stringify({ message:"Actualizar contenido del sitio (panel)", content:b64(json), branch:g.branch, sha })
+    });
+    if(!putr.ok){ const e = await putr.json().catch(()=>({})); throw new Error(e.message||("Error "+putr.status)); }
+    // éxito: el borrador local ya no hace falta (ahora es público)
+    PUBLISHED = content; BASE = JSON.parse(JSON.stringify(content));
+    try { localStorage.removeItem(DRAFT_KEY); } catch(e){}
+    clearChanged();
+    toast("¡Publicado! En Hostinger se verá tras el deploy 🚀", "ok");
+  } catch(err){
+    toast("No se pudo publicar: "+err.message, "err");
+  } finally {
+    $("#publish").disabled = false;
+  }
+}
+
+function deepInto(base, over){ Object.keys(over).forEach(k => { if(over[k] && typeof over[k]==="object" && !Array.isArray(over[k])){ base[k]=base[k]||{}; deepInto(base[k], over[k]); } else { base[k]=over[k]; } }); }
+
+/* ---- Arranque: muestra la app inmediatamente, carga contenido en el fondo ---- */
+function showApp(){
+  document.getElementById("login").hidden = true;
+  document.getElementById("app").hidden = false;
+  // Carga contenido en segundo plano — no bloquea la UI
+  var draft = null;
+  try { draft = JSON.parse(localStorage.getItem(DRAFT_KEY)||"null"); } catch(e){}
+  function applyAndBuild(pub){
+    PUBLISHED = pub || {};
+    BASE = JSON.parse(JSON.stringify(PUBLISHED));
+    if (draft) deepInto(BASE, draft);
+    buildForm();
+    try { ghFill(); } catch(e){}
+  }
+  try {
+    fetch(CONTENT_URL, { cache:"no-store" })
+      .then(function(r){ return r.ok ? r.json() : {}; })
+      .then(applyAndBuild)
+      .catch(function(){ applyAndBuild({}); });
+  } catch(e){ applyAndBuild({}); }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Mostrar login al cargar (lo PRIMERO, por si algo falla después)
+  try {
+    document.getElementById("login").hidden = false;
+    document.getElementById("app").hidden = true;
+    document.getElementById("login-pass").focus();
+  } catch(e){}
+
+  // Wiring de botones del panel (defensivo: cada uno por separado)
+  function wire(id, fn){ var el = document.getElementById(id); if (el) el.onclick = fn; }
+  wire("save-draft", saveDraft);
+  wire("discard", discard);
+  wire("preview", function(){ saveDraft(); window.open("index.html", "_blank"); });
+  wire("publish", publish);
+  wire("gh-save", ghSave);
+  wire("logout", function(){ window.location.href = "index.html"; });
+  var ghHead = document.querySelector("[data-gh] .adm-sec__head");
+  if (ghHead) ghHead.onclick = function(){ document.querySelector("[data-gh]").classList.toggle("collapsed"); };
+});
+</script>
+</body>
+</html>

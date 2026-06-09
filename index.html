@@ -1,0 +1,411 @@
+<!-- @startingPoint section="Marketing Site" subtitle="PocketCorp CRO landing, Consejo Directivo IA en WhatsApp" viewport="430x932" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PocketCorp, Tu negocio automatizado desde WhatsApp</title>
+<meta name="description" content="Despliega un equipo ejecutivo de IA, CEO, Marketing, Ventas, Finanzas y más, directo en tu WhatsApp. Sin software, sin instalación. Automatiza y toma el control total de tu negocio." />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="landing.css" />
+<!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  PLACEHOLDERS EDITABLES (marcados con subrayado punteado):    │
+  │   • Cifras de prueba social (marquee, hero, testimonios)      │
+  │   • Cupos de escasez (sección de cierre)                      │
+  │   • Precios de los planes                                     │
+  │   • Logo: reemplaza el bloque .logo-slot por tu vector Canva  │
+  │  WhatsApp + mensaje: edita las constantes en main.js          │
+  └─────────────────────────────────────────────────────────────┘
+-->
+<style>
+  [data-editable]{ text-decoration: underline dotted var(--ink-ghost); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  .closer [data-editable], .marquee [data-editable]{ text-decoration-color: rgba(25,25,25,.35); }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo-slot" href="#top" aria-label="PocketCorp">
+      <img src="../assets/brand/logo-wordmark.png" alt="PocketCorp" class="brand-logo" />
+    </a>
+    <a class="btn btn--sm cta-head" data-wa-url="https://wa.me/59162390080?text=%2Finiciar-hub">Quiero automatizar mi negocio</a>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="background-color: rgb(253, 253, 249)">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+        Tu Consejo Directivo IA · dentro de tu WhatsApp
+      </span>
+      <h1 class="display" data-key="hero.title" data-rich style="letter-spacing: 0.2px; line-height: 1.3">Tu negocio automatizado y bajo <span class="pill-word">control total</span> desde WhatsApp.</h1>
+      <p class="lead hero-sub" data-key="hero.sub">Despliega un equipo ejecutivo de IA,CEO, Marketing, Ventas, Finanzas y más, directo en el chat que ya usas todos los días. Sin software nuevo, sin instalación, sin curvas raras. Le escribes, y trabaja.</p>
+      <div class="hero-cta">
+        <a class="btn btn--lg" data-wa-url="https://wa.me/59162390080?text=%2Finiciar-hub">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.5-.7c.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+          Quiero automatizar mi negocio
+        </a>
+        <a class="btn btn--lg btn--white" href="#directores">Conocer al equipo</a>
+      </div>
+      <div class="trust">
+        <span class="stars" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </span>
+        <span class="num">4.8/5</span>
+        <span class="txt">· <span data-editable data-key="hero.trust">+90 PYMEs en LatAm</span> ya delegan en su equipo de IA</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="bg-titles" aria-hidden="true">
+        <span>CONTROL</span>
+        <span>24 / 7</span>
+        <span>AUTOPILOT</span>
+      </div>
+      <div class="portrait-frame">
+        <img src="../assets/employees/max.jpeg" alt="Max, CEO de IA de PocketCorp" />
+      </div>
+      <span class="portrait-tab">Max · CEO Digital</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span><span data-editable data-key="marquee.stat">+90 PYMEs automatizadas</span></span><span>Revolución operativa LatAm</span><span>Tu equipo de IA 24/7</span><span>Sin instalación</span><span>Directo en WhatsApp</span><span>Hecho en Bolivia</span>
+    <span><span data-editable data-key="marquee.stat">+90 PYMEs automatizadas</span></span><span>Revolución operativa LatAm</span><span>Tu equipo de IA 24/7</span><span>Sin instalación</span><span>Directo en WhatsApp</span><span>Hecho en Bolivia</span>
+  </div>
+</div>
+
+<!-- ============ COGNITIVE GAP MATRIX ============ -->
+<section class="section section--white">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--pop-crimson);font-size:14px">El antes y el después</span>
+      <h2 class="h2" style="margin-top:10px">Dejá de apagar incendios. Empezá a dirigir.</h2>
+    </div>
+    <div class="matrix">
+      <div class="panel panel--chaos" data-reveal>
+        <span class="tag-mini">Gestión actual · El Apaga Incendios</span>
+        <h3>Hoy hacés de todo, y nada a tiempo.</h3>
+        <ul class="checklist" style="margin-top:16px">
+          <li><span class="ic">✕</span> Despiertas con 100+ mensajes sin responder.</li>
+          <li><span class="ic">✕</span> Armás los reportes a mano, el lunes a las 11 de la noche.</li>
+          <li><span class="ic">✕</span> Se te escapan promesas y seguimientos de clientes.</li>
+          <li><span class="ic">✕</span> "Lo veo la próxima semana" es tu respuesta default.</li>
+          <li><span class="ic">✕</span> Sos CEO, vendedor, contador y soporte… al mismo tiempo.</li>
+        </ul>
+      </div>
+      <div class="panel panel--suite" data-reveal>
+        <span class="tag-mini">Gestión PocketCorp</span>
+        <h3>Tu Consejo Directivo IA trabaja mientras vivís tu vida.</h3>
+        <ul class="checklist" style="margin-top:16px">
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Tus mensajes se responden incluso mientras dormís.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Reportes ejecutivos automáticos, cada lunes 8am.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Cero promesas perdidas: Eva agenda y te recuerda.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Decisiones con datos, no con corazonadas.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Vos hacés lo único que nadie más puede: Crecer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIRECTORS CAROUSEL ============ -->
+<section class="section" id="directores">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="font-size:14px">Conoce a tus directores</span>
+      <h2 class="h2" style="margin-top:10px">Nueve directores de IA,<br>Un solo chat.</h2>
+      <p class="lead">Cada uno es experto en lo suyo y trabaja en equipo. Contrata uno o al Consejo Administrativo entero.</p>
+    </div>
+  </div>
+  <div class="wrap" style="max-width:1240px">
+    <div class="carousel" role="list">
+      <!-- Max -->
+      <a class="dir-card" role="listitem" href="directores/max.html">
+        <div class="dir-card__top"><img src="../assets/employees/max.jpeg" alt="Max" /><span class="dir-card__role" style="background:var(--pop-green)">CEO</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Max</div><p class="dir-card__fw" data-key="dir.max">Dirección estratégica: OKRs trimestrales y priorización por impacto real.</p><span class="dir-card__link">Conocer a Max →</span></div>
+      </a>
+      <!-- Linda -->
+      <a class="dir-card" role="listitem" href="directores/linda.html">
+        <div class="dir-card__top"><img src="../assets/employees/linda.jpeg" alt="Linda" /><span class="dir-card__role" style="background:var(--pop-cyan)">Marketing</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Linda</div><p class="dir-card__fw" data-key="dir.linda">Copywriting PAS/AIDA y carruseles que paran el scroll.</p><span class="dir-card__link">Conocer a Linda →</span></div>
+      </a>
+      <!-- Armando -->
+      <a class="dir-card" role="listitem" href="directores/armando.html">
+        <div class="dir-card__top"><img src="../assets/employees/armando.jpeg" alt="Armando" /><span class="dir-card__role" style="background:var(--pop-yellow)">Finanzas</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Armando</div><p class="dir-card__fw" data-key="dir.armando">Flujo de caja semanal y reportes financieros a un solo toque.</p><span class="dir-card__link">Conocer a Armando →</span></div>
+      </a>
+      <!-- Vladimir -->
+      <a class="dir-card" role="listitem" href="directores/vladimir.html">
+        <div class="dir-card__top"><img src="../assets/employees/vladimir.jpeg" alt="Vladimir" /><span class="dir-card__role" style="background:var(--pop-yellow)">Ventas</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Vladimir</div><p class="dir-card__fw" data-key="dir.vladimir">Prospección en frío y seguimiento que no deja caer ni un lead.</p><span class="dir-card__link">Conocer a Vladimir →</span></div>
+      </a>
+      <!-- Eva -->
+      <a class="dir-card" role="listitem" href="directores/eva.html">
+        <div class="dir-card__top"><img src="../assets/employees/eva.jpeg" alt="Eva" /><span class="dir-card__role" style="background:var(--pop-pink)">Asistente</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Eva</div><p class="dir-card__fw" data-key="dir.eva">Bandeja a cero y agenda blindada, redactando con tu tono.</p><span class="dir-card__link">Conocer a Eva →</span></div>
+      </a>
+      <!-- Sofia -->
+      <a class="dir-card" role="listitem" href="directores/sofia.html">
+        <div class="dir-card__top"><img src="../assets/employees/sofia.jpeg" alt="Sofia" /><span class="dir-card__role" style="background:var(--pop-purple)">RRHH</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Sofia</div><p class="dir-card__fw" data-key="dir.sofia">Filtrado de candidatos y onboarding exprés para tu gente.</p><span class="dir-card__link">Conocer a Sofia →</span></div>
+      </a>
+      <!-- Paola -->
+      <a class="dir-card" role="listitem" href="directores/paola.html">
+        <div class="dir-card__top"><img src="../assets/employees/paola.jpeg" alt="Paola" /><span class="dir-card__role" style="background:var(--pop-lime)">Operaciones</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Paola</div><p class="dir-card__fw" data-key="dir.paola">Automatización de procesos y manuales operativos siempre vivos.</p><span class="dir-card__link">Conocer a Paola →</span></div>
+      </a>
+      <!-- Luis -->
+      <a class="dir-card" role="listitem" href="directores/luis.html">
+        <div class="dir-card__top"><img src="../assets/employees/luis.jpeg" alt="Luis" /><span class="dir-card__role" style="background:var(--pop-crimson);color:var(--white)">Legal</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Luis</div><p class="dir-card__fw" data-key="dir.luis">Revisión de contratos y alertas de cláusulas riesgosas.</p><span class="dir-card__link">Conocer a Luis →</span></div>
+      </a>
+      <!-- Hugo -->
+      <a class="dir-card" role="listitem" href="directores/hugo.html">
+        <div class="dir-card__top"><img src="../assets/employees/hugo.jpeg" alt="Hugo" /><span class="dir-card__role" style="background:var(--pop-yellow)">Riesgo</span></div>
+        <div class="dir-card__body"><div class="dir-card__name">Hugo</div><p class="dir-card__fw" data-key="dir.hugo">Detección de fraude y conformidad en tiempo real.</p><span class="dir-card__link">Conocer a Hugo →</span></div>
+      </a>
+    </div>
+    <p class="carousel-hint">← deslizá para ver a todo el consejo →</p>
+  </div>
+</section>
+
+<!-- ============ WHATSAPP SIMULATOR ============ -->
+<section class="section section--white">
+  <div class="wrap">
+    <div class="sim">
+      <div class="phone" aria-hidden="true">
+        <div class="phone__notch"></div>
+        <div class="phone__screen">
+          <div class="wa-top">
+            <img src="../assets/employees/max.jpeg" alt="" />
+            <div><div class="nm">Max · CEO IA</div><div class="on">en línea</div></div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-day">HOY</div>
+            <div class="bubble me">Max, ¿cómo venimos este mes? <span class="t">8:02</span></div>
+            <div class="bubble them">Buenos días, Dario ☕. Te lo resumo en 3 líneas:<span class="t">8:02</span></div>
+            <div class="bubble them bubble--data">
+              <div class="dh">📊 Reporte ejecutivo · Octubre</div>
+              <div class="dr"><span>Ventas vs mes pasado</span> <b>+18%</b></div>
+              <div class="dr"><span>Leads calientes</span> <b>3 pendientes</b></div>
+              <div class="dr"><span>Campaña de Linda</span> <b>12 prospectos</b></div>
+            </div>
+            <div class="bubble me">Agenda llamadas con esos 3 leads <span class="t">8:03</span></div>
+            <div class="bubble them">Hecho ✅ Eva ya envió las invitaciones y bloqueó tu agenda mañana 10–12am.<span class="t">8:03</span></div>
+            <div class="typing"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="sim-copy">
+        <span class="eyebrow" style="font-size:14px">Prueba de producto</span>
+        <h2 class="h2">Todo pasa en el chat que ya conoces.</h2>
+        <p class="lead">Nada de paneles complicados ni apps nuevas. Le escribes a tu director como a cualquier contacto, y él ejecuta, reporta y te avisa. Así de simple.</p>
+        <ul class="sim-feats">
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Pides un dato y lo tienes al instante, sin abrir Excel.</li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Aprueba tareas con un mensaje: "dale", "agenda", "publica".</li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Recibe reportes y alertas justo cuando importan.</li>
+        </ul>
+        <div style="margin-top:28px"><a class="btn btn--green" data-wa-url="https://wa.me/59162390080?text=%2Finiciar-hub">Probarlo en mi WhatsApp</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENTO BENEFITS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="font-size:14px">Por qué PocketCorp?</span>
+      <h2 class="h2" style="margin-top:10px">Un negocio que cabe en tu bolsillo.</h2>
+    </div>
+    <div class="bento">
+      <div class="box box--feature" data-reveal>
+        <span class="layered-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg> Control Total 24/7</span>
+        <h3 style="margin-top:18px">Tu Consejo de Administración nunca duerme.</h3>
+        <p>Tus directores IA reportan, ejecutan y te avisan estés donde estés. Vacaciones, reuniones o domingo a la noche: tu negocio sigue avanzando solo.</p>
+      </div>
+      <div class="box" data-reveal>
+        <div class="ic-badge" style="background:var(--pop-cyan)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Cero instalación</h3>
+        <p>Vive dentro de tu WhatsApp. Si sabes mandar un mensaje, ya sabes usarlo.</p>
+      </div>
+      <div class="box" data-reveal>
+        <div class="ic-badge" style="background:var(--pop-orange)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Reportes a un toque</h3>
+        <p>Pides un número y lo tienes al instante. Sin hojas de cálculo, sin esperas.</p>
+      </div>
+      <div class="box box--wide box--green" data-reveal>
+        <div class="ic-badge" style="background:var(--white)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0111 0M16 6.5a3 3 0 010 5.8M21 20a5.5 5.5 0 00-4-5.3"/></svg></div>
+        <h3>9 directores, en paralelo</h3>
+        <p>Un equipo ejecutivo completo trabajando a la vez, y todos hablan entre ellos para mantener tu negocio alineado.</p>
+      </div>
+      <div class="box" data-reveal>
+        <div class="ic-badge" style="background:var(--pop-pink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 12h18M3 19h12"/></svg></div>
+        <h3>Habla tu idioma</h3>
+        <p>Atiende a tus clientes en español e inglés, como lo harías vos.</p>
+      </div>
+      <div class="box" data-reveal>
+        <div class="ic-badge" style="background:var(--pop-lime)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
+        <h3>Datos privados</h3>
+        <p>Cifrado de extremo a extremo. Tu información es tuya, siempre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section--white" id="planes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="font-size:14px">Planes</span>
+      <h2 class="h2" style="margin-top:10px">Una nómina que sí te conviene.</h2>
+      <p class="lead" data-key="pricing.sub">Menos que un café al día por Director.</p>
+    </div>
+    <div class="plans">
+      <div class="plan" data-reveal>
+        <div class="plan__name" data-key="pricing.soloName">Solo</div>
+        <p class="plan__blurb" data-key="pricing.soloBlurb">Un director de IA a tu elección.</p>
+        <div class="plan__price"><span class="n" data-editable data-key="pricing.soloPrice">$49</span><span class="per">/mes</span></div>
+        <div class="plan__rule"></div>
+        <ul class="plan__feats">
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> 1 director de IA</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Dentro de tu WhatsApp</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Soporte por chat</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Cancela cuando quieras</li>
+        </ul>
+        <a class="btn btn--white" data-wa="Hola, me interesa el plan Solo de PocketCorp">Empezar con Solo</a>
+      </div>
+      <div class="plan plan--pop" data-reveal>
+        <span class="plan-badge">★ Más popular</span>
+        <div class="plan__name" data-key="pricing.equipoName">Equipo</div>
+        <p class="plan__blurb" data-key="pricing.equipoBlurb">Cinco directores trabajando en conjunto.</p>
+        <div class="plan__price"><span class="n" data-editable data-key="pricing.equipoPrice">$189</span><span class="per">/mes</span></div>
+        <div class="plan__rule"></div>
+        <ul class="plan__feats">
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> 5 directores de IA</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Reportes semanales</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Integraciones ilimitadas</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Onboarding guiado</li>
+        </ul>
+        <a class="btn" data-wa="Hola, me interesa el plan Equipo de PocketCorp">Empezar con Equipo</a>
+      </div>
+      <div class="plan" data-reveal>
+        <div class="plan__name" data-key="pricing.consejoName">Consejo</div>
+        <p class="plan__blurb" data-key="pricing.consejoBlurb">La plantilla completa, sin límites.</p>
+        <div class="plan__price"><span class="n" data-editable data-key="pricing.consejoPrice">$429</span><span class="per">/mes</span></div>
+        <div class="plan__rule"></div>
+        <ul class="plan__feats">
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Los 9 directores de IA</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Multi-negocio</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Atención 24/7</li>
+          <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Gerente de cuenta dedicado</li>
+        </ul>
+        <a class="btn btn--white" data-wa="Hola, me interesa el plan Consejo de PocketCorp">Empezar con Consejo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="font-size:14px">Dudas frecuentes</span>
+      <h2 class="h2" style="margin-top:10px">Lo que todos preguntan.</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary class="faq-q"><span data-key="faq.q1">¿Necesito instalar algún software?</span><span class="faq-sign"><svg class="s-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a" data-key="faq.a1">No. Todo vive dentro de WhatsApp (el que ya tienes. No descargas apps, no creas cuentas raras ni aprendes paneles nuevos. Si sabes mandar un mensaje, ya sabes usar PocketCorp.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-key="faq.q2">¿Cómo aprende sobre mi negocio?</span><span class="faq-sign"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a" data-key="faq.a2">En el onboarding le cuentas a qué te dedicas, tus servicios y tu tono. A partir de ahí, tu equipo se entrena automáticamente con cada conversación: cuanto más trabajan contigo, mejores se vuelven.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-key="faq.q3">¿Mis datos están seguros?</span><span class="faq-sign"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a" data-key="faq.a3">Sí. Trabajamos sobre el cifrado de extremo a extremo de WhatsApp y tu información nunca se comparte. Es tuya, siempre.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-key="faq.q4">¿Funciona con WhatsApp Business o personal?</span><span class="faq-sign"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a" data-key="faq.a4">Con ambos. Te ayudamos a conectarlo en minutos durante el diagnóstico inicial, sin que pierdas tus chats ni tus contactos.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span data-key="faq.q5">¿Hay permanencia o letra chica?</span><span class="faq-sign"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a" data-key="faq.a5">Ninguna. Cancelas con un mensaje y listo. Además, tienes 7 días de garantía: si no es para ti, te devolvemos cada centavo.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSER / SCARCITY ============ -->
+<section class="closer">
+  <div class="wrap">
+    <div>
+      <span class="scarcity-pill"><span class="dot"></span> Cupos limitados este mes</span>
+      <h2 class="h2 display" style="text-transform:none">Solo <span data-editable data-key="closer.cupos">11 negocios</span> entran al onboarding este mes en Bolivia.</h2>
+      <p class="lead" style="margin-top:14px;color:var(--ink)" data-key="closer.sub">Hacemos onboarding personalizado, así que abrimos pocos cupos por mes. Cuando se llenan, el siguiente turno es el mes que viene. Tu diagnóstico hoy es gratis y dura 10 minutos por WhatsApp.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+      <a class="btn btn--lg" data-wa="Hola Dario, quiero iniciar mi diagnóstico gratis para automatizar mi negocio con PocketCorp">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.5-.7c.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+        Iniciar Diagnóstico
+      </a>
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--ink)">Gratis · 10 min · sin compromiso</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <div class="logo-slot" style="margin-bottom:14px">
+        <img src="../assets/brand/logo-wordmark-outline.png" alt="PocketCorp" class="brand-logo brand-logo--footer" />
+      </div>
+      <p data-key="footer.tagline">Tu Consejo Directivo IA dentro de WhatsApp. Automatiza tu negocio y recupera tu tiempo, sin software, sin nómina, sin drama.</p>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:12px">Contacto</div>
+      <div class="foot-cta">
+        <a data-wa><svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.5-.7c.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg> Escríbenos por WhatsApp</a>
+      </div>
+      <div class="foot-social">
+        <a data-social="instagram" class="foot-social__ic" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a data-social="facebook" class="foot-social__ic" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.2 0-4 1.8-4 4V12H7v3.5h3V23h3.5v-7.5H16l.5-3.5h-3V9.5c0-.3.2-.5.5-.5z"/></svg></a>
+        <a data-social="tiktok" class="foot-social__ic" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.6 3.5 3.9v2.6c-1.3 0-2.5-.4-3.5-1v5.9c0 3.2-2.6 5.6-5.7 5.6S5 17.6 5 14.5s2.6-5.6 5.7-5.6c.3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.6 0-2.9 1.3-2.9 3s1.3 3 2.9 3 2.9-1.3 2.9-3V3h2.9z"/></svg></a>
+      </div>
+      <p style="margin-top:10px" data-key="footer.atiende">Atiende: Dario Aoiz</p>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:12px">Equipo IA</div>
+      <p style="margin:0">Max · Linda · Armando · Vladimir · Eva · Sofia · Paola · Luis · Hugo</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="foot-legal"><span>© 2026 PocketCorp · Todos los derechos reservados</span><span>Hecho en Bolivia 🇧🇴 <span id="admin-dot" aria-hidden="true"></span></span></div></div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" data-wa aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.5-.7c.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+</a>
+
+<script src="content.js" data-base="."></script>
+<script src="main.js"></script>
+</body>
+</html>
