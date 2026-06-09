@@ -1,0 +1,66 @@
+/* PocketCorp — Radii, Borders, Shadows, Motion
+   ----------------------------------------------------------------
+   SIGNATURE: every card/button/badge wears tactical-charcoal ink and
+   a SOLID geometric offset shadow (hard, no blur). Sharp rectangles
+   are forbidden — soft rounded corners only.
+*/
+
+:root {
+  /* ---- Corner radii (rounded-2xl is the brand default) ---- */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   14px;
+  --radius-lg:   16px;   /* rounded-2xl — brand default for cards/buttons */
+  --radius-xl:   20px;
+  --radius-2xl:  26px;
+  --radius-3xl:  34px;
+  --radius-pill: 999px;
+
+  /* ---- Ink borders (tactical charcoal) ---- */
+  --bw-hair:  1px;
+  --bw:       2px;   /* signature border-2 */
+  --bw-bold:  3px;
+  --bw-heavy: 4px;
+  --border:        var(--bw) solid var(--ink);
+  --border-bold:   var(--bw-bold) solid var(--ink);
+  --border-hair:   var(--bw-hair) solid var(--grey-300);
+
+  /* ---- Hard offset shadows (no blur — the "3D comic" lift) ---- */
+  --shadow-1:  2px 2px 0 0 var(--ink);
+  --shadow-2:  4px 4px 0 0 var(--ink);   /* signature button/card */
+  --shadow-3:  6px 6px 0 0 var(--ink);
+  --shadow-4:  8px 8px 0 0 var(--ink);
+  --shadow-5:  12px 12px 0 0 var(--ink);
+
+  /* pressed = shadow collapses, element translates into its slot */
+  --press-shift: 2px;
+
+  /* ---- Soft luxury shadows (subtle ambient depth) ---- */
+  --shadow-soft-sm: 0 2px 8px rgba(25, 25, 25, 0.06);
+  --shadow-soft:    0 8px 24px rgba(25, 25, 25, 0.08);
+  --shadow-soft-lg: 0 18px 48px rgba(25, 25, 25, 0.10);
+
+  /* ---- Colored offset shadows (pop emphasis) ---- */
+  --shadow-pop-orange:  4px 4px 0 0 var(--pop-orange);
+  --shadow-pop-green:   4px 4px 0 0 var(--pop-green);
+  --shadow-pop-cyan:    4px 4px 0 0 var(--pop-cyan);
+  --shadow-pop-pink:    4px 4px 0 0 var(--pop-pink);
+
+  /* ---- Focus ring ---- */
+  --ring: 0 0 0 3px var(--cream), 0 0 0 5px var(--pop-blue);
+
+  /* ---- Motion: snappy, tactile, a touch of bounce ---- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);    /* @kind other */
+  --ease-snap:   cubic-bezier(0.34, 1.56, 0.64, 1);  /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);    /* @kind other */
+  --dur-fast:    120ms;  /* @kind other */
+  --dur:         180ms;  /* @kind other */
+  --dur-slow:    280ms;  /* @kind other */
+  --transition-press: transform var(--dur-fast) var(--ease-snap),
+                      box-shadow var(--dur-fast) var(--ease-snap);
+
+  /* ---- Halftone dot texture (pop-art comic shading) ---- */
+  --halftone-dot: var(--ink);
+  --halftone: radial-gradient(var(--halftone-dot) 1.4px, transparent 1.5px);
+  --halftone-size: 9px 9px;
+}

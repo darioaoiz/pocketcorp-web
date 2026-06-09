@@ -1,0 +1,74 @@
+/* PocketCorp — Color System
+   ----------------------------------------------------------------
+   Paradigm: High-End Editorial Comic & Luxury Tech Workspace.
+   Absolute light-mode. Solid black/dark page backgrounds are forbidden.
+   Pop accents appear as SOLID panels wrapped in tactical-charcoal ink.
+*/
+
+:root {
+  /* ---- Ink / neutrals (high-contrast charcoal-black) ---- */
+  --ink:           #191919;  /* borders, type base, shadow ink   */
+  --ink-soft:      #2B2B2B;
+  --ink-mute:      #5C5C5C;   /* secondary text                   */
+  --ink-faint:     #8A8A86;   /* tertiary / captions              */
+  --ink-ghost:     #BDBDB8;   /* disabled, hairlines on cream     */
+
+  /* ---- Canvas framework backgrounds (light only) ---- */
+  --cream:         #FAF9F5;  /* Executive Light Cream — base page */
+  --white:         #FFFFFF;  /* Polished Pure White               */
+  --grey-100:      #F8F9FA;  /* Light Technical Grey              */
+  --grey-200:      #EFEFEA;  /* hairline fills, track grooves     */
+  --grey-300:      #E2E2DC;
+
+  /* ---- Pop accents (Director / monochromatic pop panels) ---- */
+  --pop-green:     #00FF66;  /* MAX · CEO · "go" / live           */
+  --pop-cyan:      #00F0FF;  /* LINDA · Marketing                 */
+  --pop-yellow:    #FBCC00;  /* ARMANDO · Finanzas                */
+  --pop-orange:    #FF5C00;  /* Conversion / primary CTA          */
+  --pop-crimson:   #FF0033;  /* Conversion alt / alert            */
+  --pop-pink:      #FF3D8B;  /* EVA · Asistente (logo magenta)    */
+  --pop-purple:    #9B5DE5;  /* SOFIA · RRHH                      */
+  --pop-lime:      #A8E10C;  /* PAOLA · Operaciones               */
+  --pop-blue:      #2C6BED;  /* informational / links             */
+
+  /* ---- Soft tint companions (pop @ ~12% over cream) ---- */
+  --tint-green:    #E2FFEC;
+  --tint-cyan:     #DEFCFF;
+  --tint-yellow:   #FFF6D1;
+  --tint-orange:   #FFE7D6;
+  --tint-pink:     #FFE2EE;
+  --tint-purple:   #F0E7FC;
+  --tint-blue:     #E2EBFD;
+
+  /* ---- Semantic aliases ---- */
+  --bg-page:        var(--cream);
+  --bg-elevated:    var(--white);
+  --bg-sunken:      var(--grey-100);
+  --bg-groove:      var(--grey-200);
+
+  --text-strong:    var(--ink);
+  --text-body:      var(--ink-soft);
+  --text-muted:     var(--ink-mute);
+  --text-faint:     var(--ink-faint);
+  --text-on-pop:    var(--ink);     /* pop panels keep black ink */
+  --text-inverse:   var(--white);
+
+  --border-ink:     var(--ink);
+  --border-soft:    var(--grey-300);
+
+  --action-primary: var(--pop-orange);  /* default CTA fill */
+  --action-danger:  var(--pop-crimson);
+  --action-success: var(--pop-green);
+  --link:           var(--pop-blue);
+
+  /* ---- Director accent map (per AI employee) ---- */
+  --accent-ceo:        var(--pop-green);    /* Max        */
+  --accent-marketing:  var(--pop-cyan);     /* Linda      */
+  --accent-finance:    var(--pop-yellow);   /* Armando    */
+  --accent-assistant:  var(--pop-pink);     /* Eva        */
+  --accent-hr:         var(--pop-purple);   /* Sofia      */
+  --accent-risk:       var(--pop-yellow);   /* Hugo       */
+  --accent-legal:      var(--pop-crimson);  /* Luis       */
+  --accent-ops:        var(--pop-lime);     /* Paola      */
+  --accent-sales:      var(--pop-yellow);   /* Vladimir   */
+}

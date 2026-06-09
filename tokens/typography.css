@@ -1,0 +1,73 @@
+/* PocketCorp — Typography
+   ----------------------------------------------------------------
+   Display  : Anton          — comic punch, ALL-CAPS, tight, logo echo
+   Heading  : Archivo         — editorial headings, heavy weights
+   Body/UI  : Hanken Grotesk  — readable, friendly grotesk
+   Mono     : Space Mono      — eyebrows, labels, metrics, code
+*/
+
+:root {
+  /* ---- Families ---- */
+  --font-display:  'Anton', 'Archivo', system-ui, sans-serif;
+  --font-heading:  'Archivo', system-ui, sans-serif;
+  --font-sans:     'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono:     'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights ---- */
+  --fw-regular:   400;  /* @kind font */
+  --fw-medium:    500;  /* @kind font */
+  --fw-semibold:  600;  /* @kind font */
+  --fw-bold:      700;  /* @kind font */
+  --fw-extrabold: 800;  /* @kind font */
+  --fw-black:     900;  /* @kind font */
+
+  /* ---- Type scale (1.25 major-third-ish, editorial) ---- */
+  --text-2xs:   11px;
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    18px;
+  --text-lg:    20px;
+  --text-xl:    24px;
+  --text-2xl:   30px;
+  --text-3xl:   38px;
+  --text-4xl:   48px;
+  --text-5xl:   62px;
+  --text-6xl:   80px;
+  --text-7xl:   104px;
+
+  /* ---- Line-heights ---- */
+  --leading-none:   1;
+  --leading-tight:  1.08;
+  --leading-snug:   1.22;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.65;
+
+  /* ---- Letter-spacing ---- */
+  --tracking-tighter: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-wider:   0.12em;   /* mono eyebrows */
+  --tracking-widest:  0.22em;
+}
+
+/* ---- Semantic roles ---- */
+:root {
+  --display-font:   var(--font-display);
+  --display-weight: var(--fw-regular);   /* Anton is single-weight */
+  --display-spacing:var(--tracking-tight);
+  --display-leading:var(--leading-none);
+
+  --heading-font:   var(--font-heading);
+  --heading-weight: var(--fw-black);
+  --heading-spacing:var(--tracking-tight);
+
+  --eyebrow-font:   var(--font-mono);
+  --eyebrow-weight: var(--fw-bold);
+  --eyebrow-spacing:var(--tracking-wider);
+
+  --body-font:      var(--font-sans);
+  --body-weight:    var(--fw-regular);
+  --body-leading:   var(--leading-normal);
+}

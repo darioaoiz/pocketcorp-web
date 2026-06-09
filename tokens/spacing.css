@@ -1,0 +1,35 @@
+/* PocketCorp — Spacing & Sizing
+   4px base grid. Generous, airy luxury rhythm. */
+
+:root {
+  --space-0:   0px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   32px;
+  --space-8:   40px;
+  --space-9:   48px;
+  --space-10:  64px;
+  --space-11:  80px;
+  --space-12:  96px;
+  --space-13:  128px;
+
+  /* ---- Container widths ---- */
+  --container-sm:  640px;
+  --container-md:  840px;
+  --container-lg:  1080px;
+  --container-xl:  1280px;
+  --container-2xl: 1440px;
+
+  /* ---- Page gutters ---- */
+  --gutter:        24px;
+  --gutter-lg:     48px;
+
+  /* ---- Control heights ---- */
+  --control-sm:   34px;
+  --control-md:   44px;   /* default — min tap target */
+  --control-lg:   56px;
+}
