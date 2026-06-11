@@ -188,14 +188,19 @@ a { color: inherit; text-decoration: none; }
 .carousel-hint { text-align: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
 
 /* ---------- Directors group labels (Matriz 2C) ---------- */
-.dir-group-head { display: flex; flex-direction: column; gap: 8px; padding: 0 20px; margin: 26px 0 14px; }
-.dir-group-head:first-child { margin-top: 0; }
+.dir-rail { max-width: 720px; }
+.dir-group-head { display: flex; flex-direction: column; gap: 8px; padding: 0 20px; margin: 40px 0 16px; }
+.dir-rail:first-of-type .dir-group-head { margin-top: 0; }
 .dir-group-tag {
-  align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 12px;
+  align-self: flex-start; font-family: var(--font-mono); font-weight: 700; font-size: 13px;
   letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
-  border: 2px solid var(--ink); border-radius: 999px; padding: 6px 14px; box-shadow: 3px 3px 0 0 var(--ink);
+  border: 2px solid var(--ink); border-radius: 999px; padding: 7px 16px; box-shadow: 3px 3px 0 0 var(--ink);
 }
 .dir-group-head p { margin: 0; max-width: 640px; font-size: 14.5px; line-height: 1.5; color: var(--ink-soft); }
+
+/* Max: lone featured card, centered instead of orphaned-left */
+.carousel--solo { justify-content: center; }
+.carousel--solo .dir-card { flex: 0 0 300px; }
 
 /* ---------- WhatsApp simulator ---------- */
 .sim { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
