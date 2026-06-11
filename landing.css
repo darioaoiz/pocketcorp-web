@@ -200,11 +200,24 @@ a { color: inherit; text-decoration: none; }
 
 /* Max: lone featured card, centered + horizontal layout */
 .carousel--solo { justify-content: center; }
-.carousel--solo .dir-card { flex: 0 0 min(460px, 88vw); }
-.dir-card--wide { flex-direction: row; align-items: stretch; }
-.dir-card--wide .dir-card__top { width: 46%; flex: 0 0 46%; border-bottom: none; border-right: 2px solid var(--ink); }
-.dir-card--wide .dir-card__role { top: 12px; bottom: auto; transform: none; }
-.dir-card--wide .dir-card__body { justify-content: center; padding: 20px 18px; }
+.carousel--solo .dir-card { flex: 0 0 min(480px, 90vw); }
+.dir-card--wide {
+  flex-direction: row !important;
+  align-items: stretch;
+  min-height: 200px;
+}
+.dir-card--wide .dir-card__top {
+  flex: 0 0 44% !important;
+  width: 44% !important;
+  aspect-ratio: unset !important;
+  min-height: 200px;
+  border-bottom: none !important;
+  border-right: 2px solid var(--ink);
+  overflow: hidden;
+}
+.dir-card--wide .dir-card__top img { height: 100%; width: 100%; object-fit: cover; object-position: center top; }
+.dir-card--wide .dir-card__role { top: 12px; bottom: auto !important; transform: none !important; }
+.dir-card--wide .dir-card__body { flex: 1; justify-content: center; padding: 24px 20px; }
 
 /* ---------- WhatsApp simulator ---------- */
 .sim { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
