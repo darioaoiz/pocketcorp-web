@@ -105,55 +105,13 @@ a { color: inherit; text-decoration: none; }
 
 .hero-art { position: relative; }
 
-/* ---------- Hero scene · fusión WhatsApp ⇄ Web (neo-brutalista) ---------- */
-.hero-scene {
-  position: relative; width: 100%; max-width: 440px; margin: 4px auto 0;
-  aspect-ratio: 1 / 0.94; container-type: inline-size;
+/* ---------- Hero image (real asset) ---------- */
+.hero-img-wrap {
+  border: 3px solid var(--ink); border-radius: 22px; overflow: hidden;
+  box-shadow: 8px 8px 0 0 var(--ink); transform: rotate(1deg);
+  max-width: 420px; margin: 0 auto; background: var(--white);
 }
-/* Centro de Comando Web (capa de atrás) */
-.hs-browser {
-  position: absolute; top: 0; left: 0; width: 82%; z-index: 1;
-  background: var(--white); border: 3px solid var(--ink); border-radius: 14px;
-  box-shadow: 7px 7px 0 0 var(--ink); transform: rotate(-1.8deg); overflow: hidden;
-}
-.hs-browser__bar { display: flex; align-items: center; gap: 1.4cqi; padding: 2.1cqi 2.6cqi; border-bottom: 2px solid var(--ink); background: var(--grey-100); }
-.hs-dot { width: 2.4cqi; height: 2.4cqi; border-radius: 50%; border: 1.5px solid var(--ink); flex: none; }
-.hs-dot:nth-child(1) { background: var(--pop-crimson); }
-.hs-dot:nth-child(2) { background: var(--pop-yellow); }
-.hs-dot:nth-child(3) { background: var(--pop-green); }
-.hs-url {
-  margin-left: 1.4cqi; font-family: var(--font-mono); font-size: 2.1cqi; letter-spacing: .03em; text-transform: uppercase;
-  color: var(--ink-mute); background: var(--white); border: 1.5px solid var(--ink-ghost); border-radius: 999px;
-  padding: 0.7cqi 2.2cqi; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.hs-browser__body { padding: 3cqi; }
-.hs-kanban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqi; }
-.hs-col { background: var(--grey-100); border: 2px solid var(--ink); border-radius: 8px; padding: 1.8cqi 1.6cqi; display: flex; flex-direction: column; gap: 1.6cqi; min-height: 24cqi; }
-.hs-col__h { font-family: var(--font-mono); font-weight: 700; font-size: 1.9cqi; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-mute); }
-.hs-task { height: 3.6cqi; border-radius: 4px; background: var(--white); border: 1.5px solid var(--ink); box-shadow: 1.5px 1.5px 0 0 var(--ink); }
-.hs-task--green { background: var(--pop-green); }
-.hs-task--cyan { background: var(--pop-cyan); }
-/* WhatsApp (capa de adelante) */
-.hs-phone {
-  position: absolute; right: 0; bottom: 0; width: 47%; z-index: 2;
-  background: #0B141A; border: 3px solid var(--ink); border-radius: 18px;
-  box-shadow: 7px 7px 0 0 var(--ink); transform: rotate(3deg); padding: 2cqi 1.8cqi; overflow: hidden;
-}
-.hs-phone__top { display: flex; align-items: center; gap: 1.8cqi; background: #1F2C34; margin: -2cqi -1.8cqi 1.8cqi; padding: 2.2cqi 2.4cqi; border-bottom: 2px solid var(--ink); }
-.hs-avatar { width: 6cqi; height: 6cqi; border-radius: 50%; background: var(--pop-yellow); border: 2px solid var(--ink); flex: none; }
-.hs-phone__name { font-family: var(--font-mono); font-weight: 700; font-size: 2.3cqi; color: #E9EDEF; line-height: 1.3; display: flex; flex-direction: column; }
-.hs-phone__name i { font-style: normal; font-weight: 400; font-size: 1.9cqi; color: #8FA6B0; }
-.hs-phone__chat { display: flex; flex-direction: column; gap: 1.6cqi; padding-bottom: 1.4cqi; }
-.hs-bubble { font-size: 2.3cqi; line-height: 1.32; padding: 1.6cqi 2cqi; border-radius: 9px; color: #E9EDEF; max-width: 90%; }
-.hs-bubble--me { align-self: flex-end; background: #005C4B; border-bottom-right-radius: 3px; }
-.hs-bubble--them { align-self: flex-start; background: #1F2C34; border-bottom-left-radius: 3px; }
-/* Badge de conexión */
-.hs-sync {
-  position: absolute; left: 36%; bottom: 16%; z-index: 3; transform: translateX(-50%) rotate(-4deg);
-  font-family: var(--font-mono); font-weight: 700; font-size: 2.4cqi; letter-spacing: .06em; text-transform: uppercase;
-  background: var(--pop-orange); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px;
-  padding: 1.2cqi 2.6cqi; box-shadow: 3px 3px 0 0 var(--ink); white-space: nowrap;
-}
+.hero-img { width: 100%; height: auto; display: block; }
 
 /* ---------- Marquee ---------- */
 .marquee {
@@ -454,7 +412,7 @@ a { color: inherit; text-decoration: none; }
   .hero-copy { grid-area: copy; }
   .hero-art { grid-area: art; align-self: center; }
   .hero-actions { grid-area: actions; margin-top: 28px; }
-  .hero-scene { margin: 0 auto; max-width: 430px; }
+  .hero-img-wrap { margin: 0 auto; max-width: 430px; }
   .sim { grid-template-columns: 1fr 1fr; gap: 48px; }
   .portrait-frame { margin: 0; max-width: 420px; }
 }
