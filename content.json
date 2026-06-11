@@ -29,16 +29,19 @@
     "hugo": "Consejero de riesgo on-demand: vigila en silencio y entra ante el primer movimiento sospechoso."
   },
   "pricing": {
-    "sub": "Menos que un café al día por Director.",
-    "soloName": "Solo",
-    "soloBlurb": "Un director de IA a tu elección.",
-    "soloPrice": "$49",
-    "equipoName": "Equipo",
-    "equipoBlurb": "Cinco directores trabajando en conjunto.",
-    "equipoPrice": "$189",
-    "consejoName": "Consejo",
-    "consejoBlurb": "La plantilla completa, sin límites.",
-    "consejoPrice": "$429"
+    "eyebrow": "Precio único",
+    "title": "El control total de tu negocio por menos de lo que cuesta un café al día.",
+    "sub": "Sin plataformas difíciles. Sin capacitaciones aburridas. Si sabes usar WhatsApp, ya sabes usar PocketCorp.",
+    "planName": "POCKETCORP V2-PRO",
+    "price": "$79",
+    "per": "/mes",
+    "valueSub": "Todo el sistema unificado. Sin letras chicas, sin parches.",
+    "feat1": "El Consejo Directivo completo — los 9 directores interconectados.",
+    "feat2": "Centro de Ejecución Web — dashboard simbiótico en tiempo real.",
+    "feat3": "Sincronización total — integrado directo a tu WhatsApp comercial.",
+    "feat4": "Botón de Pánico 24/7 — sesión de emergencia activa ante crisis.",
+    "cta": "Activar mi matriz ahora",
+    "foot": "* Instalación en 5 minutos. Cancela cuando quieras."
   },
   "faq": {
     "q1": "¿Necesito instalar algún software?",

@@ -284,6 +284,41 @@ a { color: inherit; text-decoration: none; }
 .plan .btn { margin-top: auto; }
 .plan-badge { display: inline-flex; align-self: flex-start; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--white); border: 2px solid var(--ink); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
 
+/* ---------- Pricing: single dominant plan (Matriz 2C · precio único) ---------- */
+.price-solo {
+  position: relative; max-width: 480px; margin: 6px auto 0;
+  background: var(--white); border: 3px solid var(--ink); border-radius: var(--radius-xl);
+  box-shadow: 8px 8px 0 0 var(--ink);
+  padding: 36px 30px 30px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.price-solo__sticker {
+  position: absolute; top: -20px; right: 14px; transform: rotate(7deg);
+  font-family: var(--font-mono); font-weight: 700; font-size: 11px; line-height: 1.15;
+  letter-spacing: .04em; text-transform: uppercase; text-align: center; color: var(--ink);
+  background: var(--pop-yellow); border: 2px solid var(--ink); border-radius: 10px;
+  padding: 7px 11px; box-shadow: 3px 3px 0 0 var(--ink);
+}
+.price-solo__tag {
+  font-family: var(--font-mono); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--white); background: var(--ink); border: 2px solid var(--ink); border-radius: 999px;
+  padding: 8px 18px; box-shadow: 3px 3px 0 0 var(--pop-green);
+}
+.price-solo__amount { display: flex; align-items: baseline; gap: 8px; margin: 24px 0 2px; }
+.price-solo__num { font-family: var(--font-display); font-size: clamp(64px, 17vw, 92px); line-height: .82; letter-spacing: -0.01em; }
+.price-solo__per { font-family: var(--font-mono); font-weight: 700; font-size: 16px; color: var(--ink-mute); }
+.price-solo__value { font-size: 14.5px; line-height: 1.45; color: var(--ink-soft); margin: 10px 0 0; max-width: 330px; }
+.price-solo__rule { height: 2px; width: 100%; background: var(--ink); margin: 24px 0; }
+.price-solo__feats { list-style: none; margin: 0 0 26px; padding: 0; width: 100%; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+.price-solo__feats li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; font-weight: 500; line-height: 1.4; }
+.price-solo__feats .ic {
+  flex: none; width: 24px; height: 24px; margin-top: 1px; border-radius: 7px;
+  background: var(--pop-green); border: 2px solid var(--ink); color: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.price-solo__cta { width: 100%; text-transform: uppercase; letter-spacing: .02em; }
+.price-solo__foot { font-family: var(--font-mono); font-size: 11px; letter-spacing: .03em; color: var(--ink-faint); margin: 16px 0 0; }
+
 /* ---------- FAQ ---------- */
 .faq { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq-item { border: 2px solid var(--ink); border-radius: var(--radius-lg); background: var(--white); box-shadow: 2px 2px 0 0 var(--ink); overflow: hidden; transition: box-shadow var(--dur) ease; }
