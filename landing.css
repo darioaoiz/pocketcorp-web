@@ -53,6 +53,10 @@ a { color: inherit; text-decoration: none; }
 .btn--white { --fill: var(--white); }
 .btn--green { --fill: var(--pop-green); }
 .btn--wa-glyph svg { flex: none; }
+/* Secondary / low-emphasis: transparent, no shadow — must not compete with the primary CTA */
+.btn--ghost { --fill: transparent; box-shadow: none; font-weight: 700; }
+.btn--ghost:hover { transform: none; box-shadow: none; background: rgba(25,25,25,.05); }
+.btn--ghost:active { transform: translate(1px,1px); box-shadow: none; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -298,6 +302,7 @@ a { color: inherit; text-decoration: none; }
 .price-solo__amount { display: flex; align-items: baseline; gap: 8px; margin: 24px 0 2px; }
 .price-solo__num { font-family: var(--font-display); font-size: clamp(64px, 17vw, 92px); line-height: .82; letter-spacing: -0.01em; }
 .price-solo__per { font-family: var(--font-mono); font-weight: 700; font-size: 16px; color: var(--ink-mute); }
+.price-solo__local { font-family: var(--font-mono); font-weight: 700; font-size: 14px; letter-spacing: .02em; color: var(--ink-mute); margin: 2px 0 0; }
 .price-solo__value { font-size: 14.5px; line-height: 1.45; color: var(--ink-soft); margin: 10px 0 0; max-width: 330px; }
 .price-solo__rule { height: 2px; width: 100%; background: var(--ink); margin: 24px 0; }
 .price-solo__feats { list-style: none; margin: 0 0 26px; padding: 0; width: 100%; display: flex; flex-direction: column; gap: 14px; text-align: left; }
@@ -308,7 +313,32 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex; align-items: center; justify-content: center;
 }
 .price-solo__cta { width: 100%; text-transform: uppercase; letter-spacing: .02em; }
-.price-solo__foot { font-family: var(--font-mono); font-size: 11px; letter-spacing: .03em; color: var(--ink-faint); margin: 16px 0 0; }
+.price-solo__guarantee {
+  display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center;
+  width: 100%; margin: 14px 0 0; padding: 9px 12px;
+  font-size: 12.5px; font-weight: 700; line-height: 1.3; color: var(--ink);
+  background: var(--tint-green, rgba(20,200,120,.12)); border: 2px solid var(--ink); border-radius: 12px;
+}
+.price-solo__foot { font-family: var(--font-mono); font-size: 11px; letter-spacing: .03em; color: var(--ink-faint); margin: 14px 0 0; }
+
+/* ---------- Testimonials ---------- */
+.testimonials { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.tcard {
+  margin: 0; background: var(--white); border: 2px solid var(--ink);
+  border-radius: var(--radius-xl); box-shadow: 5px 5px 0 0 var(--ink);
+  padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;
+}
+.tcard__stars { display: inline-flex; gap: 2px; color: var(--pop-orange); }
+.tcard__quote { margin: 0; font-size: 15.5px; line-height: 1.5; font-weight: 500; color: var(--ink); }
+.tcard__who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.tcard__avatar {
+  flex: none; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--ink);
+  background: var(--pop-green); display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-weight: 900; font-size: 18px; color: var(--ink);
+}
+.tcard__meta { display: flex; flex-direction: column; line-height: 1.25; }
+.tcard__meta b { font-size: 14.5px; }
+.tcard__meta span { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-mute); }
 
 /* ---------- FAQ ---------- */
 .faq { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
@@ -395,6 +425,7 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 720px) {
   .section { padding: 84px 0; }
   .matrix { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .testimonials { grid-template-columns: repeat(3, 1fr); }
   .bento { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(150px, auto); }
   .bento .box--feature { grid-column: span 2; grid-row: span 2; }
   .bento .box--wide { grid-column: span 2; }
