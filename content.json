@@ -4,6 +4,11 @@
     "waNumber": "59162390080",
     "waMsg": "Hola PocketCorp 👋 Quiero asegurar mi cupo y empezar a automatizar mi negocio con mi equipo de IA. ¿Cómo arranco? 🚀"
   },
+  "analytics": {
+    "metaPixelId": "",
+    "ga4Id": "",
+    "gtmId": ""
+  },
   "social": {
     "instagram": "#",
     "facebook": "#",
