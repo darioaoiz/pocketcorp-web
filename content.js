@@ -15,6 +15,7 @@
       waNumber: "59169542275",
       waMsg: "Hola PocketCorp 👋 Quiero automatizar mi negocio con mi equipo de IA. ¿Cómo empiezo?"
     },
+    analytics: { metaPixelId: "", ga4Id: "", gtmId: "" },
     social: { instagram: "", facebook: "", tiktok: "" }
   };
 
@@ -46,8 +47,70 @@
     return safe.replace(/\*([^*]+)\*/g, '<span class="pill-word">$1</span>');
   }
 
+  // ── Analítica / seguimiento ──────────────────────────────
+  // Inyecta los píxeles SOLO si hay un ID configurado en el Panel de
+  // Admin (content.json → analytics). Sin IDs, no se carga nada y el
+  // sitio funciona igual. pcTrack() manda los eventos a lo que esté
+  // presente (Meta Pixel, GA4, Google Tag Manager) sin romper si falta.
+  function injectMetaPixel(id) {
+    if (!id || window.fbq) return;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', id);
+    window.fbq('track', 'PageView');
+  }
+  function injectGA4(id) {
+    if (!id || window.__pcGA) return;
+    window.__pcGA = true;
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+  }
+  function injectGTM(id) {
+    if (!id || window.__pcGTM) return;
+    window.__pcGTM = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(id);
+    document.head.appendChild(s);
+  }
+  function setupAnalytics(a) {
+    a = a || {};
+    try { injectMetaPixel(String(a.metaPixelId || '').trim()); } catch (e) {}
+    try { injectGA4(String(a.ga4Id || '').trim()); } catch (e) {}
+    try { injectGTM(String(a.gtmId || '').trim()); } catch (e) {}
+  }
+  // Manda un evento a todas las analíticas presentes. Seguro si no hay ninguna.
+  window.pcTrack = function (eventName, params) {
+    params = params || {};
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: eventName }, params));
+    } catch (e) {}
+    try { if (typeof window.gtag === 'function') window.gtag('event', eventName, params); } catch (e) {}
+    try {
+      if (typeof window.fbq === 'function') {
+        window.fbq('trackCustom', 'WhatsAppClick', params);
+        window.fbq('track', 'Contact', params); // evento estándar de conversión
+      }
+    } catch (e) {}
+  };
+
   function applyContent(content) {
     window.PC_CONTENT = content;
+
+    // 0) Analítica: cargar píxeles configurados (si los hay)
+    setupAnalytics(content.analytics);
 
     // 1) Aplicar textos a [data-key]
     document.querySelectorAll("[data-key]").forEach(function (el) {
@@ -91,6 +154,18 @@
       }
       el.setAttribute("target", "_blank");
       el.setAttribute("rel", "noopener noreferrer");
+
+      // Seguimiento de clic (una sola vez por elemento)
+      if (!el.__pcWaTracked) {
+        el.__pcWaTracked = true;
+        el.addEventListener("click", function () {
+          window.pcTrack("whatsapp_click", {
+            cta_location: el.getAttribute("data-wa-loc") || "desconocido",
+            page_path: location.pathname,
+            page_title: document.title
+          });
+        });
+      }
     });
 
     document.dispatchEvent(new CustomEvent("pc-content-ready", { detail: content }));

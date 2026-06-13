@@ -221,6 +221,11 @@ const SCHEMA = [
     { key: "social.facebook", label: "Facebook (URL completa)", type: "text", hint: "https://facebook.com/tupagina" },
     { key: "social.tiktok", label: "TikTok (URL completa)", type: "text", hint: "https://tiktok.com/@tucuenta" },
   ]},
+  { id: "analytics", title: "Seguimiento de clics (Analítica)", color: "#7C3AED", fields: [
+    { key: "analytics.metaPixelId", label: "Meta Pixel ID — Facebook/Instagram Ads", type: "text", hint: "Solo números (ej: 123456789012345). Se saca en Meta Events Manager. Mide cuánta gente hace clic a WhatsApp y optimiza tus anuncios. Vacío = no se carga nada." },
+    { key: "analytics.ga4Id", label: "Google Analytics 4 — ID de medición", type: "text", hint: "Empieza con G- (ej: G-ABC123DEF4). Google Analytics → Administrar → Flujos de datos. Mide el tráfico del sitio. Vacío = no se carga." },
+    { key: "analytics.gtmId", label: "Google Tag Manager — ID de contenedor (opcional)", type: "text", hint: "Empieza con GTM- (ej: GTM-ABC123). Solo si ya usás Tag Manager. Vacío = no se carga." },
+  ]},
   { id: "hero", title: "Encabezado (Hero)", color: "#FF5C00", fields: [
     { key: "hero.title", label: "Titular grande", type: "area", hint: "Encerrá una palabra entre *asteriscos* para resaltarla con el recuadro naranja." },
     { key: "hero.sub", label: "Subtítulo", type: "area" },
