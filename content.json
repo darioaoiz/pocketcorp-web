@@ -1,8 +1,8 @@
 {
-  "_comment": "PocketCorp — contenido editable del sitio. Este archivo lo edita el Panel de Administración. No hace falta tocarlo a mano.",
+  "_comment": "PocketCorp: contenido editable del sitio. Este archivo lo edita el Panel de Administración. No hace falta tocarlo a mano.",
   "global": {
     "waNumber": "59162390080",
-    "waMsg": "Hola PocketCorp 👋 Quiero mi diagnóstico gratis y empezar a automatizar mi negocio con mi equipo de IA. ¿Cómo arranco? 🚀"
+    "waMsg": "Hola PocketCorp 👋 Quiero asegurar mi cupo y empezar a automatizar mi negocio con mi equipo de IA. ¿Cómo arranco? 🚀"
   },
   "social": {
     "instagram": "#",
@@ -37,10 +37,10 @@
     "per": "/mes",
     "priceLocal": "≈ Bs. 450/mes",
     "valueSub": "Todo el sistema unificado. Sin letras chicas, sin parches.",
-    "feat1": "El Consejo Directivo completo — los 9 directores interconectados.",
-    "feat2": "Centro de Control Web — un tablero interactivo para tus tareas diarias.",
-    "feat3": "Sincronización total — integrado directo a tu WhatsApp comercial.",
-    "feat4": "Consejeros de crisis on-demand — entran cuando algo se incendia en tu negocio.",
+    "feat1": "El Consejo Directivo completo: los 9 directores interconectados.",
+    "feat2": "Centro de Control Web: un tablero interactivo para tus tareas diarias.",
+    "feat3": "Sincronización total: integrado directo a tu WhatsApp comercial.",
+    "feat4": "Consejeros de crisis on-demand: entran cuando algo se incendia en tu negocio.",
     "cta": "Conectar mi WhatsApp ahora",
     "guarantee": "🛡️ 7 días de garantía: si no es para vos, te devolvemos cada centavo.",
     "foot": "* Vinculás tu WhatsApp en 2 minutos. Cancela cuando quieras."
@@ -53,7 +53,7 @@
     "q3": "¿Mis datos están seguros?",
     "a3": "Sí. Trabajamos sobre el cifrado de extremo a extremo de WhatsApp y tu información nunca se comparte. Es tuya, siempre.",
     "q4": "¿Funciona con WhatsApp Business o personal?",
-    "a4": "Con ambos. Te ayudamos a conectarlo en 2 minutos durante el diagnóstico inicial, sin que pierdas tus chats ni tus contactos.",
+    "a4": "Con ambos. Te ayudamos a conectarlo en 2 minutos durante la puesta en marcha, sin que pierdas tus chats ni tus contactos.",
     "q5": "¿Hay permanencia o letra chica?",
     "a5": "Ninguna. Cancelas con un mensaje y listo. Además, tienes 7 días de garantía: si no es para ti, te devolvemos cada centavo.",
     "q6": "¿Tengo que saber de tecnología o programación?",
@@ -63,7 +63,7 @@
   },
   "closer": {
     "cupos": "11 negocios",
-    "sub": "Hacemos una puesta en marcha personalizada contigo, así que abrimos pocos cupos por mes. Cuando se llenan, el siguiente turno es el mes que viene. Tu diagnóstico hoy es gratis y dura 10 minutos por WhatsApp."
+    "sub": "Hacemos una puesta en marcha personalizada contigo, así que abrimos pocos cupos por mes. Cuando se llenan, el siguiente turno es el mes que viene. Escríbenos hoy por WhatsApp, sin compromiso."
   },
   "footer": {
     "tagline": "Tu Consejo Directivo IA dentro de WhatsApp. Automatiza tu negocio y recupera tu tiempo, sin software, sin nómina, sin drama.",
@@ -92,19 +92,19 @@
       "deliv1Title": "Objetivos y Resultados Clave(OKRs) trimestrales",
       "deliv1Desc": "Define 3 a 5 objetivos clave con métricas claras y medibles, y los mantiene vivos cada semana.",
       "deliv2Title": "Resumen ejecutivo semanal",
-      "deliv2Desc": "Cada lunes a las 8am: pipeline, finanzas, riesgos y la próxima apuesta — en 30 segundos de lectura.",
+      "deliv2Desc": "Cada lunes a las 8am: pipeline, finanzas, riesgos y la próxima apuesta, en 30 segundos de lectura.",
       "deliv3Title": "Decisiones con datos",
-      "deliv3Desc": "¿A o B? Te entrega análisis costo-beneficio, riesgos y recomendación clara — en minutos, no en reuniones.",
+      "deliv3Desc": "¿A o B? Te entrega análisis costo-beneficio, riesgos y recomendación clara, en minutos, no en reuniones.",
       "deliv4Title": "Alineación del equipo",
       "deliv4Desc": "Mantiene a tus 8 directores IA (y a vos) enfocados en las mismas prioridades. Cero \"cada quien por su lado\".",
       "chatTitle": "Una conversación. Tres decisiones tomadas.",
       "chatSub": "Le escribís un mensaje y te devuelve las 3 prioridades del trimestre que importan ahora. Aprobás, agenda y avisa al resto del consejo, todo desde el mismo chat.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Max estará dentro de tu chat esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Max estará dentro de tu chat esta misma semana."
     },
     "linda": {
       "eyebrow": "Director #02 · Marketing Digital",
       "role": "Marketing · Contenido y campañas",
-      "tagline": "Domino los 4 frameworks de copy —PAS, AIDA, BAB y 4Ps— y te entrego textos persuasivos al instante por WhatsApp. Estoy conectada al Protector de Presupuesto del panel, así sé cuándo tu anuncio dejó de vender. Vos aprobás, yo publico.",
+      "tagline": "Domino los 4 frameworks de copy (PAS, AIDA, BAB y 4Ps) y te entrego textos persuasivos al instante por WhatsApp. Estoy conectada al Protector de Presupuesto del panel, así sé cuándo tu anuncio dejó de vender. Vos aprobás, yo publico.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp como a tu agencia de confianza, solo que esta nunca duerme y no manda factura por hora.",
       "deliv1Title": "Estrategia de contenido",
@@ -117,12 +117,12 @@
       "deliv4Desc": "Keywords, blog posts y backlinks que llevan tráfico orgánico a tu sitio, todos los días.",
       "chatTitle": "Un brief. Un mes de contenido listo.",
       "chatSub": "Le contás de qué va tu negocio y ella te arma todo con los 4 frameworks: posts, carruseles, emails. Vos solo aprobás. Y como está conectada al Protector de Presupuesto del panel, te avisa apenas un anuncio deja de vender.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Linda estará escribiendo para tu negocio esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Linda estará escribiendo para tu negocio esta misma semana."
     },
     "armando": {
       "eyebrow": "Director #03 · Finanzas Corporativas",
       "role": "Finanzas · Flujo y reportes",
-      "tagline": "Soy tu consejero financiero de emergencia. Cuando algo arde —un número que no cuadra, una factura que no entendés— me mandás un audio o la foto y te digo qué hacer. No te pido reportes ni planillas: vos me mostrás el incendio, yo lo apago.",
+      "tagline": "Soy tu consejero financiero de emergencia. Cuando algo arde (un número que no cuadra, una factura que no entendés) me mandás un audio o la foto y te digo qué hacer. No te pido reportes ni planillas: vos me mostrás el incendio, yo lo apago.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp cuando hay fuego: le mandás un audio o la foto de una factura y te responde al instante, como tu CFO de emergencia que nunca está ocupado.",
       "deliv1Title": "Flujo de caja semanal",
@@ -135,12 +135,12 @@
       "deliv4Desc": "Cruza tus bancos con tu contabilidad cada semana. Cero discrepancias acumuladas, cero sorpresas en cierre.",
       "chatTitle": "Tres preguntas. Cero hojas de Excel.",
       "chatSub": "Le pedís el estado de tu negocio y te lo manda en formato chat: limpio, rápido, accionable. Sin necesidad de abrir nada más.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Armando estará cuidando tus números esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Armando estará cuidando tus números esta misma semana."
     },
     "vladimir": {
       "eyebrow": "Director #04 · Ventas Comerciales",
       "role": "Ventas · Prospección y cierre",
-      "tagline": "Te armo el script de cierre exacto y la respuesta a las objeciones más duras —el \"está muy caro\" incluido— directo en tu WhatsApp. Vos copiás, mandás y cerrás. Mientras vivís tu vida, yo te lleno el pipeline.",
+      "tagline": "Te armo el script de cierre exacto y la respuesta a las objeciones más duras (el \"está muy caro\" incluido) directo en tu WhatsApp. Vos copiás, mandás y cerrás. Mientras vivís tu vida, yo te lleno el pipeline.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp como a tu mejor vendedor, el que nunca se cansa, nunca pierde la sonrisa y siempre vuelve con tres nombres nuevos.",
       "deliv1Title": "Prospección continua",
@@ -153,7 +153,7 @@
       "deliv4Desc": "Argumentos a la medida en segundos. Convierte el \"muy caro\" y el \"lo voy a pensar\" en una llamada agendada.",
       "chatTitle": "Tres preguntas. Tres llamadas agendadas.",
       "chatSub": "Te llega el pipeline con probabilidad de cierre por lead. Decides cuáles avanzan, él agenda y te prepara el resumen con sus posibles objeciones, para que entres a cada llamada ya con la respuesta.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Vladimir estará llenando tu pipeline esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Vladimir estará llenando tu pipeline esta misma semana."
     },
     "eva": {
       "eyebrow": "Director #05 · Asistencia Ejecutiva",
@@ -171,12 +171,12 @@
       "deliv4Desc": "Te avisa cuando es momento, no antes, no después. Reactivar leads, llamar al banco, firmar el contrato.",
       "chatTitle": "Un buenos días. Una mañana resuelta.",
       "chatSub": "Te despertás y Eva ya filtró 80 correos, priorizó 4, redactó respuestas con tu tono y te tiene listo el resumen de tu primera reunión. Vos aprobás, ella ejecuta. Cero ruido, cero olvidos.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Eva estará ordenando tu bandeja esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Eva estará ordenando tu bandeja esta misma semana."
     },
     "sofia": {
       "eyebrow": "Director #06 · Recursos Humanos",
       "role": "RRHH · Talento y cultura",
-      "tagline": "Soy tu consejera de equipo de emergencia. Cuando hay un problema de gente —un conflicto, una renuncia, una contratación urgente— me lo contás por audio o me mandás el CV, y te digo cómo resolverlo hoy. Sin papeleo, sin esperar.",
+      "tagline": "Soy tu consejera de equipo de emergencia. Cuando hay un problema de gente (un conflicto, una renuncia, una contratación urgente) me lo contás por audio o me mandás el CV, y te digo cómo resolverlo hoy. Sin papeleo, sin esperar.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp cuando se prende un fuego con tu gente: un audio explicando la situación o la foto de un CV, y te entra a resolver al instante, tu mano derecha en gente que nunca está ocupada.",
       "deliv1Title": "Pipeline de talento",
@@ -189,7 +189,7 @@
       "deliv4Desc": "Encuestas, pulsos y alertas tempranas. Te enterás de que alguien está pensando irse, antes de que renuncie.",
       "chatTitle": "Una búsqueda. Tres candidatos listos.",
       "chatSub": "Le pedís un puesto y ella lo trabaja continuamente: publica, filtra, califica y agenda. Vos solo entrás a las entrevistas finales con un resumen honesto de cada candidato y las preguntas ya pensadas.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Sofia estará cuidando a tu gente esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Sofia estará cuidando a tu gente esta misma semana."
     },
     "paola": {
       "eyebrow": "Director #07 · Operaciones",
@@ -207,7 +207,7 @@
       "deliv4Desc": "Te muestra dónde se pierde tiempo, dónde se ahorra y qué procesos vale la pena seguir mejorando.",
       "chatTitle": "Una herramienta. Un proceso automatizado.",
       "chatSub": "Le contás qué te quita tiempo y ella te propone (y conecta) la automatización. En minutos, ese proceso deja de existir como tarea manual.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Paola estará automatizando tu operación esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Paola estará automatizando tu operación esta misma semana."
     },
     "luis": {
       "eyebrow": "Director #08 · Asesoría Legal",
@@ -225,7 +225,7 @@
       "deliv4Desc": "Te avisa cuando cambia la ley relevante para tu rubro y te dice qué tenés que ajustar en tu operación.",
       "chatTitle": "Un contrato. Cuatro minutos. Dos riesgos detectados.",
       "chatSub": "Le mandás el PDF y te devuelve el análisis en lenguaje claro: qué firmar, qué renegociar y qué directamente rechazar. Sin esperar al lunes. Sin tarifa por hora.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Luis estará revisando tus contratos esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Luis estará revisando tus contratos esta misma semana."
     },
     "hugo": {
       "eyebrow": "Director #09 · Riesgo y Conformidad",
@@ -243,7 +243,7 @@
       "deliv4Desc": "Identifica los puntos críticos de tu negocio y arma un plan B para que un imprevisto no te tumbe.",
       "chatTitle": "3 AM. Un intento de fraude. Cero pérdidas.",
       "chatSub": "Mientras dormís, Hugo está mirando. Detecta el patrón sospechoso en segundos, bloquea preventivamente y te despierta solo si te necesita. Si no, lo resuelve y al día siguiente te deja el reporte.",
-      "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Hugo estará vigilando tu negocio esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Hugo estará vigilando tu negocio esta misma semana."
     }
   }
 }
