@@ -2,7 +2,7 @@
   "_comment": "PocketCorp — contenido editable del sitio. Este archivo lo edita el Panel de Administración. No hace falta tocarlo a mano.",
   "global": {
     "waNumber": "59162390080",
-    "waMsg": "Hola ! Vi la presentación de PocketCorp y quiero conectar mi WhatsApp para activar mi Consejo Directivo ahora mismo. 🚀"
+    "waMsg": "Hola PocketCorp 👋 Quiero mi diagnóstico gratis y empezar a automatizar mi negocio con mi equipo de IA. ¿Cómo arranco? 🚀"
   },
   "social": {
     "instagram": "#",
@@ -19,49 +19,68 @@
   },
   "dir": {
     "max": "Dirección estratégica: coordina los dos ejes del Consejo y prioriza por impacto real.",
-    "linda": "Domina PAS, AIDA, BAB y 4Ps: copys persuasivos al instante, conectada al medidor de pauta del panel.",
+    "linda": "Domina PAS, AIDA, BAB y 4Ps: copys persuasivos al instante, conectada al Protector de Presupuesto del panel.",
     "armando": "Consejero de crisis financiera on-demand: mándale un audio o la foto de una factura y apaga el incendio.",
     "vladimir": "Scripts de cierre rápido y respuestas a objeciones duras como el «está muy caro», directo en WhatsApp.",
-    "eva": "Organiza tu día y alimenta tu Kanban: mueve cada tarea sola desde el chat.",
+    "eva": "Organiza tu día y ordena tu lista de pendientes: mueve cada tarea sola desde el chat.",
     "sofia": "Consejera de crisis de equipo on-demand: se activa cuando hay un problema de gente que resolver ya.",
     "paola": "Consejera de crisis operativa on-demand: entra cuando un proceso se traba y te lo destraba.",
     "luis": "Consejero legal de emergencia: mándale la foto de un contrato y te dice qué firmar y qué no.",
     "hugo": "Consejero de riesgo on-demand: vigila en silencio y entra ante el primer movimiento sospechoso."
   },
   "pricing": {
-    "eyebrow": "Precio único",
+    "eyebrow": "Precio de lanzamiento",
     "title": "El control total de tu negocio por menos de lo que cuesta un café al día.",
     "sub": "Sin plataformas difíciles. Sin capacitaciones aburridas. Si sabes usar WhatsApp, ya sabes usar PocketCorp.",
     "planName": "POCKETCORP V2-PRO",
-    "price": "$79",
+    "price": "US$49",
     "per": "/mes",
+    "priceLocal": "≈ Bs. 450/mes",
     "valueSub": "Todo el sistema unificado. Sin letras chicas, sin parches.",
     "feat1": "El Consejo Directivo completo — los 9 directores interconectados.",
     "feat2": "Centro de Control Web — un tablero interactivo para tus tareas diarias.",
     "feat3": "Sincronización total — integrado directo a tu WhatsApp comercial.",
-    "feat4": "Botón de Pánico 24/7 — sesión de emergencia activa ante crisis.",
+    "feat4": "Consejeros de crisis on-demand — entran cuando algo se incendia en tu negocio.",
     "cta": "Conectar mi WhatsApp ahora",
-    "foot": "* Conexión en 5 minutos. Cancela cuando quieras."
+    "guarantee": "🛡️ 7 días de garantía: si no es para vos, te devolvemos cada centavo.",
+    "foot": "* Vinculás tu WhatsApp en 2 minutos. Cancela cuando quieras."
   },
   "faq": {
     "q1": "¿Necesito instalar algún software?",
-    "a1": "No. Todo vive dentro de WhatsApp (el que ya tienes. No descargas apps, no creas cuentas raras ni aprendes paneles nuevos. Si sabes mandar un mensaje, ya sabes usar PocketCorp.",
+    "a1": "No. Todo vive dentro de WhatsApp (el que ya tienes). No descargas apps, no creas cuentas raras ni aprendes paneles nuevos. Si sabes mandar un mensaje, ya sabes usar PocketCorp.",
     "q2": "¿Cómo aprende sobre mi negocio?",
-    "a2": "En el onboarding le cuentas a qué te dedicas, tus servicios y tu tono. A partir de ahí, tu equipo se entrena automáticamente con cada conversación: cuanto más trabajan contigo, mejores se vuelven.",
+    "a2": "En la puesta en marcha le cuentas a qué te dedicas, tus servicios y tu tono. A partir de ahí, tu equipo se entrena automáticamente con cada conversación: cuanto más trabajan contigo, mejores se vuelven.",
     "q3": "¿Mis datos están seguros?",
     "a3": "Sí. Trabajamos sobre el cifrado de extremo a extremo de WhatsApp y tu información nunca se comparte. Es tuya, siempre.",
     "q4": "¿Funciona con WhatsApp Business o personal?",
-    "a4": "Con ambos. Te ayudamos a conectarlo en minutos durante el diagnóstico inicial, sin que pierdas tus chats ni tus contactos.",
+    "a4": "Con ambos. Te ayudamos a conectarlo en 2 minutos durante el diagnóstico inicial, sin que pierdas tus chats ni tus contactos.",
     "q5": "¿Hay permanencia o letra chica?",
-    "a5": "Ninguna. Cancelas con un mensaje y listo. Además, tienes 7 días de garantía: si no es para ti, te devolvemos cada centavo."
+    "a5": "Ninguna. Cancelas con un mensaje y listo. Además, tienes 7 días de garantía: si no es para ti, te devolvemos cada centavo.",
+    "q6": "¿Tengo que saber de tecnología o programación?",
+    "a6": "Cero. Si sabes mandar un mensaje de WhatsApp para pedir tu almuerzo, ya sabes usar PocketCorp. Nosotros configuramos todo por ti en la puesta en marcha.",
+    "q7": "¿Y si la IA le responde mal a un cliente?",
+    "a7": "Tú tienes el control. En los temas delicados, tu director te consulta antes de responder, y en cualquier momento puedes tomar la conversación con un mensaje. Además, aprende de tu negocio y de tu tono con cada chat."
   },
   "closer": {
     "cupos": "11 negocios",
-    "sub": "Hacemos onboarding personalizado, así que abrimos pocos cupos por mes. Cuando se llenan, el siguiente turno es el mes que viene. Tu diagnóstico hoy es gratis y dura 10 minutos por WhatsApp."
+    "sub": "Hacemos una puesta en marcha personalizada contigo, así que abrimos pocos cupos por mes. Cuando se llenan, el siguiente turno es el mes que viene. Tu diagnóstico hoy es gratis y dura 10 minutos por WhatsApp."
   },
   "footer": {
     "tagline": "Tu Consejo Directivo IA dentro de WhatsApp. Automatiza tu negocio y recupera tu tiempo, sin software, sin nómina, sin drama.",
     "atiende": "Atiende: Dario Aoiz"
+  },
+  "testimonials": {
+    "eyebrow": "Lo que dicen los que ya delegan",
+    "title": "Negocios reales. Resultados reales.",
+    "t1Quote": "Antes vivía pegado al celular respondiendo. Hoy mi equipo de IA filtra y responde, y yo cierro. Recuperé mis noches.",
+    "t1Name": "Mauricio T.",
+    "t1Role": "Inmobiliaria · Santa Cruz",
+    "t2Quote": "Lo conecté en minutos por WhatsApp, sin instalar nada. En la primera semana ya tenía 12 prospectos nuevos sin mover un dedo.",
+    "t2Name": "Carla R.",
+    "t2Role": "Tienda online · Cochabamba",
+    "t3Quote": "Es como tener un equipo ejecutivo completo por el precio de un café al día. La mejor decisión que tomé este año.",
+    "t3Name": "Diego M.",
+    "t3Role": "Agencia de servicios · La Paz"
   },
   "directores": {
     "max": {
@@ -85,7 +104,7 @@
     "linda": {
       "eyebrow": "Director #02 · Marketing Digital",
       "role": "Marketing · Contenido y campañas",
-      "tagline": "Domino los 4 frameworks de copy —PAS, AIDA, BAB y 4Ps— y te entrego textos persuasivos al instante por WhatsApp. Estoy conectada al medidor de fatiga de pauta del panel, así sé cuándo tu anuncio ya cansó. Vos aprobás, yo publico.",
+      "tagline": "Domino los 4 frameworks de copy —PAS, AIDA, BAB y 4Ps— y te entrego textos persuasivos al instante por WhatsApp. Estoy conectada al Protector de Presupuesto del panel, así sé cuándo tu anuncio dejó de vender. Vos aprobás, yo publico.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp como a tu agencia de confianza, solo que esta nunca duerme y no manda factura por hora.",
       "deliv1Title": "Estrategia de contenido",
@@ -97,7 +116,7 @@
       "deliv4Title": "SEO y posicionamiento",
       "deliv4Desc": "Keywords, blog posts y backlinks que llevan tráfico orgánico a tu sitio, todos los días.",
       "chatTitle": "Un brief. Un mes de contenido listo.",
-      "chatSub": "Le contás de qué va tu negocio y ella te arma todo con los 4 frameworks: posts, carruseles, emails. Vos solo aprobás. Y como está conectada al medidor de fatiga de pauta del panel, te avisa apenas un anuncio empieza a cansar a tu audiencia.",
+      "chatSub": "Le contás de qué va tu negocio y ella te arma todo con los 4 frameworks: posts, carruseles, emails. Vos solo aprobás. Y como está conectada al Protector de Presupuesto del panel, te avisa apenas un anuncio deja de vender.",
       "closerSub": "Tu diagnóstico es gratis, dura 10 minutos y lo hago yo, Dario, por WhatsApp. Si encajamos, Linda estará escribiendo para tu negocio esta misma semana."
     },
     "armando": {
@@ -139,7 +158,7 @@
     "eva": {
       "eyebrow": "Director #05 · Asistencia Ejecutiva",
       "role": "Asistente · Bandeja y agenda",
-      "tagline": "Redacto correos, gestiono tu calendario y organizo tu día con tu tono. Y desde el chat alimento tu Kanban: muevo cada tarea por vos para que tu panel siempre refleje la realidad. Vos solo aparecés a lo que importa, a tiempo.",
+      "tagline": "Redacto correos, gestiono tu calendario y organizo tu día con tu tono. Y desde el chat ordeno tu lista de pendientes: muevo cada tarea por vos para que tu panel siempre refleje la realidad. Vos solo aparecés a lo que importa, a tiempo.",
       "pillTitle": "Algunos mensajes que le puedes mandar.",
       "pillSub": "Le escribís por WhatsApp como a la mejor asistente que jamás vas a tener. Estos son los mensajes que te quitan media mañana de encima.",
       "deliv1Title": "Bandeja a cero, diariamente",
