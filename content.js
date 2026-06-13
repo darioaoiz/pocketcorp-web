@@ -168,7 +168,86 @@
       }
     });
 
+    // 4) Modal-preview de directores (solo existe en la home)
+    initDirModal();
+
     document.dispatchEvent(new CustomEvent("pc-content-ready", { detail: content }));
+  }
+
+  // ── Modal-preview de directores ──────────────────────────
+  // Al hacer clic en una tarjeta, abre una ventana con foto, rol, resumen
+  // y dos CTAs (perfil completo + activar por WhatsApp). El contenido se
+  // lee de la propia tarjeta, así no hay nada que mantener por duplicado.
+  function initDirModal() {
+    if (window.__pcDirModalInit) return;
+    var modal = document.getElementById("dir-modal");
+    var cards = document.querySelectorAll(".dir-card");
+    if (!modal || !cards.length) return;
+    window.__pcDirModalInit = true;
+
+    var imgEl = document.getElementById("dir-modal-img");
+    var roleEl = document.getElementById("dir-modal-role");
+    var nameEl = document.getElementById("dir-modal-name");
+    var descEl = document.getElementById("dir-modal-desc");
+    var waEl = document.getElementById("dir-modal-wa");
+    var fullEl = document.getElementById("dir-modal-full");
+    var lastFocused = null;
+
+    function waNumber() {
+      var n = (window.PC_CONTENT && window.PC_CONTENT.global && window.PC_CONTENT.global.waNumber) || DEFAULTS.global.waNumber;
+      return String(n).replace(/[^0-9]/g, "");
+    }
+    function txt(el) { return el ? el.textContent.trim() : ""; }
+
+    function openModal(card) {
+      var img = card.querySelector(".dir-card__top img");
+      var role = card.querySelector(".dir-card__role");
+      var nm = txt(card.querySelector(".dir-card__name"));
+      var rl = txt(role);
+
+      if (img) { imgEl.setAttribute("src", img.getAttribute("src") || ""); imgEl.setAttribute("alt", img.getAttribute("alt") || nm); }
+      roleEl.textContent = rl;
+      roleEl.setAttribute("style", (role && role.getAttribute("style")) || "");
+      nameEl.textContent = nm;
+      descEl.textContent = txt(card.querySelector(".dir-card__fw"));
+      fullEl.setAttribute("href", card.getAttribute("href") || "#");
+
+      var msg = "Hola PocketCorp 👋 Quiero activar a " + nm + (rl ? " (" + rl + ")" : "") +
+        " en mi Consejo Directivo de IA. ¿Cómo arranco? 🚀";
+      waEl.setAttribute("href", "https://wa.me/" + waNumber() + "?text=" + encodeURIComponent(msg));
+      waEl.setAttribute("target", "_blank");
+      waEl.setAttribute("rel", "noopener noreferrer");
+      waEl.setAttribute("data-wa-loc", "modal_" + (nm.toLowerCase() || "director"));
+
+      lastFocused = document.activeElement;
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("dir-modal-open");
+      var x = modal.querySelector(".dir-modal__x"); if (x) x.focus();
+      window.pcTrack("director_modal_open", { director: nm, page_path: location.pathname });
+    }
+    function closeModal() {
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("dir-modal-open");
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener("click", function (e) { e.preventDefault(); openModal(card); });
+    });
+    modal.querySelectorAll("[data-dir-close]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+    waEl.addEventListener("click", function () {
+      window.pcTrack("whatsapp_click", {
+        cta_location: waEl.getAttribute("data-wa-loc") || "modal_director",
+        page_path: location.pathname, page_title: document.title
+      });
+    });
   }
 
   function boot() {
