@@ -104,7 +104,10 @@
       "deliv4Desc": "Mantiene a tus 8 directores IA (y a vos) enfocados en las mismas prioridades. Cero \"cada quien por su lado\".",
       "chatTitle": "Una conversación. Tres decisiones tomadas.",
       "chatSub": "Le escribís un mensaje y te devuelve las 3 prioridades del trimestre que importan ahora. Aprobás, agenda y avisa al resto del consejo, todo desde el mismo chat.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Max estará dentro de tu chat esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Max estará dentro de tu chat esta misma semana.",
+      "ex1": "Max, ¿en qué debería enfocarme esta semana?",
+      "ex2": "Pásame el resumen ejecutivo de este mes, por favor.",
+      "ex3": "Tengo que elegir entre lanzar producto A o B. ¿Qué dirías?"
     },
     "linda": {
       "eyebrow": "Director #02 · Marketing Digital",
@@ -122,7 +125,10 @@
       "deliv4Desc": "Keywords, blog posts y backlinks que llevan tráfico orgánico a tu sitio, todos los días.",
       "chatTitle": "Un brief. Un mes de contenido listo.",
       "chatSub": "Le contás de qué va tu negocio y ella te arma todo con los 4 frameworks: posts, carruseles, emails. Vos solo aprobás. Y como está conectada al Protector de Presupuesto del panel, te avisa apenas un anuncio deja de vender.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Linda estará escribiendo para tu negocio esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Linda estará escribiendo para tu negocio esta misma semana.",
+      "ex1": "Linda, dame un calendario de contenido para esta semana en Instagram y LinkedIn.",
+      "ex2": "Escribime esta oferta en PAS y en AIDA para comparar cuál convierte mejor.",
+      "ex3": "Hacé un carrusel sobre los 5 errores más comunes al comprar primera vivienda."
     },
     "armando": {
       "eyebrow": "Director #03 · Finanzas Corporativas",
@@ -140,7 +146,10 @@
       "deliv4Desc": "Cruza tus bancos con tu contabilidad cada semana. Cero discrepancias acumuladas, cero sorpresas en cierre.",
       "chatTitle": "Tres preguntas. Cero hojas de Excel.",
       "chatSub": "Le pedís el estado de tu negocio y te lo manda en formato chat: limpio, rápido, accionable. Sin necesidad de abrir nada más.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Armando estará cuidando tus números esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Armando estará cuidando tus números esta misma semana.",
+      "ex1": "Armando, ¿cómo está mi flujo de caja esta semana?",
+      "ex2": "Armando, ¿esta factura está bien? No me cuadra el total.",
+      "ex3": "¿Cuadran los pagos de proveedores con los cobros de ventas?"
     },
     "vladimir": {
       "eyebrow": "Director #04 · Ventas Comerciales",
@@ -158,7 +167,10 @@
       "deliv4Desc": "Argumentos a la medida en segundos. Convierte el \"muy caro\" y el \"lo voy a pensar\" en una llamada agendada.",
       "chatTitle": "Tres preguntas. Tres llamadas agendadas.",
       "chatSub": "Te llega el pipeline con probabilidad de cierre por lead. Decides cuáles avanzan, él agenda y te prepara el resumen con sus posibles objeciones, para que entres a cada llamada ya con la respuesta.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Vladimir estará llenando tu pipeline esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Vladimir estará llenando tu pipeline esta misma semana.",
+      "ex1": "Vladimir, búscame 20 prospectos en mi nicho esta semana.",
+      "ex2": "Escribime una secuencia de 4 toques para inmobiliarias medianas.",
+      "ex3": "¿Qué leads no me respondieron y debería volver a contactar?"
     },
     "eva": {
       "eyebrow": "Director #05 · Asistencia Ejecutiva",
@@ -176,7 +188,10 @@
       "deliv4Desc": "Te avisa cuando es momento, no antes, no después. Reactivar leads, llamar al banco, firmar el contrato.",
       "chatTitle": "Un buenos días. Una mañana resuelta.",
       "chatSub": "Te despertás y Eva ya filtró 80 correos, priorizó 4, redactó respuestas con tu tono y te tiene listo el resumen de tu primera reunión. Vos aprobás, ella ejecuta. Cero ruido, cero olvidos.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Eva estará ordenando tu bandeja esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Eva estará ordenando tu bandeja esta misma semana.",
+      "ex1": "Eva, organízame la bandeja y respondé lo urgente con mi tono.",
+      "ex2": "¿Qué tengo hoy y qué reuniones se pueden mover?",
+      "ex3": "Recordame seguir con Acme en 3 días si no me responden."
     },
     "sofia": {
       "eyebrow": "Director #06 · Recursos Humanos",
@@ -194,7 +209,10 @@
       "deliv4Desc": "Encuestas, pulsos y alertas tempranas. Te enterás de que alguien está pensando irse, antes de que renuncie.",
       "chatTitle": "Una búsqueda. Tres candidatos listos.",
       "chatSub": "Le pedís un puesto y ella lo trabaja continuamente: publica, filtra, califica y agenda. Vos solo entrás a las entrevistas finales con un resumen honesto de cada candidato y las preguntas ya pensadas.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Sofia estará cuidando a tu gente esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Sofia estará cuidando a tu gente esta misma semana.",
+      "ex1": "Sofia, me llegó este CV para el puesto urgente. ¿Lo entrevisto o lo descarto?",
+      "ex2": "Filtra los CVs de esta semana y dame el top 5 con justificación.",
+      "ex3": "Agendame entrevistas con los 3 finalistas para esta semana."
     },
     "paola": {
       "eyebrow": "Director #07 · Operaciones",
@@ -212,7 +230,10 @@
       "deliv4Desc": "Te muestra dónde se pierde tiempo, dónde se ahorra y qué procesos vale la pena seguir mejorando.",
       "chatTitle": "Una herramienta. Un proceso automatizado.",
       "chatSub": "Le contás qué te quita tiempo y ella te propone (y conecta) la automatización. En minutos, ese proceso deja de existir como tarea manual.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Paola estará automatizando tu operación esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Paola estará automatizando tu operación esta misma semana.",
+      "ex1": "Paola, ¿qué tarea repito cada semana que se podría automatizar?",
+      "ex2": "Conectame el CRM con la planilla de facturación y el WhatsApp Business.",
+      "ex3": "Paola, se nos cayó el proceso de despacho, escuchá lo que pasó y decime qué hago."
     },
     "luis": {
       "eyebrow": "Director #08 · Asesoría Legal",
@@ -230,7 +251,10 @@
       "deliv4Desc": "Te avisa cuando cambia la ley relevante para tu rubro y te dice qué tenés que ajustar en tu operación.",
       "chatTitle": "Un contrato. Cuatro minutos. Dos riesgos detectados.",
       "chatSub": "Le mandás el PDF y te devuelve el análisis en lenguaje claro: qué firmar, qué renegociar y qué directamente rechazar. Sin esperar al lunes. Sin tarifa por hora.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Luis estará revisando tus contratos esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Luis estará revisando tus contratos esta misma semana.",
+      "ex1": "Luis, me pasaron este contrato para firmar hoy. ¿Qué cláusulas son riesgosas?",
+      "ex2": "¿Qué significa la cláusula 4B en cristiano?",
+      "ex3": "Redactá un acuerdo de confidencialidad estándar para mi negocio."
     },
     "hugo": {
       "eyebrow": "Director #09 · Riesgo y Conformidad",
@@ -248,7 +272,10 @@
       "deliv4Desc": "Identifica los puntos críticos de tu negocio y arma un plan B para que un imprevisto no te tumbe.",
       "chatTitle": "3 AM. Un intento de fraude. Cero pérdidas.",
       "chatSub": "Mientras dormís, Hugo está mirando. Detecta el patrón sospechoso en segundos, bloquea preventivamente y te despierta solo si te necesita. Si no, lo resuelve y al día siguiente te deja el reporte.",
-      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Hugo estará vigilando tu negocio esta misma semana."
+      "closerSub": "Lo atiendo yo, Dario, personalmente por WhatsApp, gratis y sin compromiso. Si encajamos, Hugo estará vigilando tu negocio esta misma semana.",
+      "ex1": "Hugo, ¿hay algún movimiento sospechoso esta semana?",
+      "ex2": "Verificame este cliente nuevo antes de que firmemos.",
+      "ex3": "Hacé una mini auditoría de mis cobros del mes y avisame si algo no cuadra."
     }
   }
 }
