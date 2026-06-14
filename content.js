@@ -191,6 +191,10 @@
     var descEl = document.getElementById("dir-modal-desc");
     var waEl = document.getElementById("dir-modal-wa");
     var fullEl = document.getElementById("dir-modal-full");
+    var delivEl = document.getElementById("dir-modal-deliv");
+    var delivBlock = document.getElementById("dir-modal-deliv-block");
+    var msgsEl = document.getElementById("dir-modal-msgs");
+    var msgsBlock = document.getElementById("dir-modal-msgs-block");
     var lastFocused = null;
 
     function waNumber() {
@@ -198,6 +202,30 @@
       return String(n).replace(/[^0-9]/g, "");
     }
     function txt(el) { return el ? el.textContent.trim() : ""; }
+
+    function fillList(listEl, blockEl, items) {
+      if (!listEl) return;
+      var vals = items.filter(function (x) { return x && String(x).trim(); });
+      listEl.innerHTML = "";
+      vals.forEach(function (t) {
+        var li = document.createElement("li");
+        li.textContent = String(t).trim();
+        listEl.appendChild(li);
+      });
+      if (blockEl) blockEl.hidden = vals.length === 0;
+    }
+    function fillMsgs(wrapEl, blockEl, items) {
+      if (!wrapEl) return;
+      var vals = items.filter(function (x) { return x && String(x).trim(); });
+      wrapEl.innerHTML = "";
+      vals.forEach(function (t) {
+        var b = document.createElement("div");
+        b.className = "dir-modal__msg";
+        b.textContent = String(t).trim();
+        wrapEl.appendChild(b);
+      });
+      if (blockEl) blockEl.hidden = vals.length === 0;
+    }
 
     function openModal(card) {
       var img = card.querySelector(".dir-card__top img");
@@ -210,7 +238,15 @@
       roleEl.setAttribute("style", (role && role.getAttribute("style")) || "");
       nameEl.textContent = nm;
       descEl.textContent = txt(card.querySelector(".dir-card__fw"));
-      fullEl.setAttribute("href", card.getAttribute("href") || "#");
+      var href = card.getAttribute("href") || "#";
+      fullEl.setAttribute("href", href);
+
+      // Mini-resumen de la landing: entregables + ejemplos de mensajes.
+      // El director se identifica por el archivo (directores/max.html -> max).
+      var key = href.split("/").pop().replace(".html", "");
+      var d = (window.PC_CONTENT && window.PC_CONTENT.directores && window.PC_CONTENT.directores[key]) || {};
+      fillList(delivEl, delivBlock, [d.deliv1Title, d.deliv2Title, d.deliv3Title]);
+      fillMsgs(msgsEl, msgsBlock, [d.ex1, d.ex2, d.ex3]);
 
       var msg = "Hola PocketCorp 👋 Quiero activar a " + nm + (rl ? " (" + rl + ")" : "") +
         " en mi Consejo Directivo de IA. ¿Cómo arranco? 🚀";
