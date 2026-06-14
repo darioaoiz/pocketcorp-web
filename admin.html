@@ -216,6 +216,12 @@ const SCHEMA = [
     { key: "global.waNumber", label: "Número de WhatsApp (sin + ni espacios)", type: "text", hint: "Ej: 59169542275" },
     { key: "global.waMsg", label: "Mensaje precargado por defecto", type: "area" },
   ]},
+  { id: "floatingWa", title: "Botón flotante de WhatsApp", color: "#1FA855", fields: [
+    { key: "floatingWa.number", label: "Número del botón flotante (sin + ni espacios)", type: "text", hint: "Puede ser distinto al número general. Ej: 59169542275" },
+    { key: "floatingWa.msg", label: "Mensaje precargado del botón flotante", type: "area" },
+    { key: "floatingWa.tooltip", label: "Texto del globito (tooltip)", type: "text", hint: "Aparece solo tras unos segundos para invitar a escribir. Déjalo vacío si no querés que aparezca el globito." },
+    { key: "floatingWa.delaySec", label: "Segundos antes de mostrar el globito", type: "text", hint: "Ej: 15. También aparece al pasar el 60% de la página." },
+  ]},
   { id: "social", title: "Redes sociales", color: "#FF3D8B", fields: [
     { key: "social.instagram", label: "Instagram (URL completa)", type: "text", hint: "https://instagram.com/tucuenta · si lo dejás vacío, el icono queda visible pero sin enlace" },
     { key: "social.facebook", label: "Facebook (URL completa)", type: "text", hint: "https://facebook.com/tupagina" },

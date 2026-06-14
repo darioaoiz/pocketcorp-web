@@ -15,6 +15,12 @@
       waNumber: "59169542275",
       waMsg: "Hola PocketCorp 👋 Quiero automatizar mi negocio con mi equipo de IA. ¿Cómo empiezo?"
     },
+    floatingWa: {
+      number: "59169542275",
+      msg: "Hola Dario 👋 Estaba viendo PocketCorp y tengo una duda antes de empezar.",
+      tooltip: "¿Tenés dudas? Escríbeme y te respondo en minutos. 👋",
+      delaySec: "15"
+    },
     analytics: { metaPixelId: "", ga4Id: "", gtmId: "" },
     social: { instagram: "", facebook: "", tiktok: "" }
   };
@@ -168,10 +174,98 @@
       }
     });
 
-    // 4) Modal-preview de directores (solo existe en la home)
+    // 4) Botón flotante de WhatsApp: número propio + tooltip de rescate
+    initFloatingWa(content);
+
+    // 5) Modal-preview de directores (solo existe en la home)
     initDirModal();
 
     document.dispatchEvent(new CustomEvent("pc-content-ready", { detail: content }));
+  }
+
+  // ── Botón flotante de WhatsApp + tooltip de rescate ──────
+  // El botón usa su PROPIO número (distinto del global). El tooltip aparece
+  // tras unos segundos o al pasar el 60% de scroll, lo que ocurra primero,
+  // para captar a quien leyó pero aún no hizo clic en ningún CTA.
+  function initFloatingWa(content) {
+    if (window.__pcFloatWaInit) return;
+    var btn = document.querySelector(".wa-float");
+    if (!btn) return;
+    window.__pcFloatWaInit = true;
+
+    var fw = (content && content.floatingWa) || DEFAULTS.floatingWa;
+    var num = String(fw.number || DEFAULTS.floatingWa.number).replace(/[^0-9]/g, "");
+    var msg = fw.msg || DEFAULTS.floatingWa.msg;
+    var tipText = (fw.tooltip || "").trim();
+    var delay = Math.max(0, parseInt(fw.delaySec, 10) || 15) * 1000;
+    var href = "https://wa.me/" + num + "?text=" + encodeURIComponent(msg);
+
+    btn.setAttribute("href", href);
+    btn.setAttribute("target", "_blank");
+    btn.setAttribute("rel", "noopener noreferrer");
+    if (!btn.__pcWaTracked) {
+      btn.__pcWaTracked = true;
+      btn.addEventListener("click", function () {
+        window.pcTrack("whatsapp_click", {
+          cta_location: btn.getAttribute("data-wa-loc") || "boton_flotante",
+          page_path: location.pathname,
+          page_title: document.title
+        });
+      });
+    }
+
+    // Sin texto de tooltip → solo botón, nada más que hacer.
+    if (!tipText) return;
+    // Si el usuario ya lo cerró en esta sesión, no reaparece.
+    try { if (sessionStorage.getItem("pc_watip_closed") === "1") return; } catch (e) {}
+
+    var tip = document.createElement("a");
+    tip.className = "wa-tip";
+    tip.setAttribute("href", href);
+    tip.setAttribute("target", "_blank");
+    tip.setAttribute("rel", "noopener noreferrer");
+    tip.setAttribute("data-wa-loc", "tooltip_flotante");
+    var span = document.createElement("span");
+    span.className = "wa-tip__text";
+    span.textContent = tipText;
+    var close = document.createElement("button");
+    close.className = "wa-tip__close";
+    close.setAttribute("type", "button");
+    close.setAttribute("aria-label", "Cerrar");
+    close.innerHTML = "&times;";
+    tip.appendChild(span);
+    tip.appendChild(close);
+    document.body.appendChild(tip);
+
+    var shown = false, dismissed = false;
+    function showTip() {
+      if (shown || dismissed) return;
+      shown = true;
+      requestAnimationFrame(function () { tip.classList.add("show"); });
+      window.pcTrack("watip_shown", { page_path: location.pathname });
+    }
+    function hideTip(remember) {
+      dismissed = true;
+      tip.classList.remove("show");
+      setTimeout(function () { if (tip.parentNode) tip.parentNode.removeChild(tip); }, 300);
+      if (remember) { try { sessionStorage.setItem("pc_watip_closed", "1"); } catch (e) {} }
+    }
+    close.addEventListener("click", function (e) {
+      e.preventDefault(); e.stopPropagation();
+      hideTip(true);
+    });
+    tip.addEventListener("click", function () {
+      window.pcTrack("whatsapp_click", { cta_location: "tooltip_flotante", page_path: location.pathname, page_title: document.title });
+      hideTip(true);
+    });
+
+    var timer = setTimeout(showTip, delay);
+    function onScroll() {
+      var h = document.documentElement;
+      var pct = (h.scrollTop || document.body.scrollTop) / ((h.scrollHeight - h.clientHeight) || 1);
+      if (pct >= 0.6) { clearTimeout(timer); showTip(); window.removeEventListener("scroll", onScroll); }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   // ── Modal-preview de directores ──────────────────────────
