@@ -12,7 +12,7 @@
   // Valores por defecto (si content.json no carga, el sitio igual funciona)
   var DEFAULTS = {
     global: {
-      waNumber: "59169542275",
+      waNumber: "59162390080",
       waMsg: "Hola PocketCorp 👋 Quiero automatizar mi negocio con mi equipo de IA. ¿Cómo empiezo?"
     },
     floatingWa: {
